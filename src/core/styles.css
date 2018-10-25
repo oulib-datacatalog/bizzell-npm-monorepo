@@ -1,0 +1,44 @@
+.justifyCenter {
+  display: flex;
+  justify-content: center;
+}
+
+.justifyEnd {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.justifyAround {
+  display: flex;
+  justify-content: space-around;
+}
+
+.justifyStart {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.justifyBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+.alignCenter {
+  display: flex;
+  align-items: center;
+}
+
+.alignStretch {
+  display: flex;
+  align-items: stretch;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}

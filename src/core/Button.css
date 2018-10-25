@@ -1,0 +1,39 @@
+.button {
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 12px 0;
+  padding: 8px 16px 8px;
+  transition: 0.2s;
+}
+
+.button.disabled {
+  background-color: #9999a3 !important;
+  color: #222233;
+  cursor: inherit;
+}
+
+.primary {
+  background-color: rgb(56, 72, 221);
+}
+
+.primary:hover {
+  background-color: rgba(56, 72, 221, 0.8);
+}
+
+.danger {
+  background-color: rgb(221, 72, 56);
+}
+
+.danger:hover {
+  background-color: rgba(221, 72, 56, 0.8);
+}
+
+.secondary {
+  color: #222233;
+}
+
+.secondary:hover {
+  background-color: #ccccd3;
+}

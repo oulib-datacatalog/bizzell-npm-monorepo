@@ -22,7 +22,7 @@ export default {
   },
   plugins: [
     typescript(),
-    resolve({ browser: true }), // tells Rollup how to find date-fns in node_modules
+    resolve({ browser: true }),
     commonjs({
       include: ['node_modules/**'],
       exclude: ['node_modules/process-es6/**'],
@@ -37,7 +37,6 @@ export default {
       },
     }),
     production && terser(),
-    production && visualizer({ filename: './build/bundle.stats.html' }),
     production ||
       serve({
         open: true,
@@ -52,6 +51,12 @@ export default {
         production ? 'production' : 'development',
       ),
     }),
+    production &&
+      visualizer({
+        filename: './build/bundle.stats.html',
+        open: true,
+        sourcemap: true,
+      }),
     production && gzip(),
     html({
       template: 'src/index.html',

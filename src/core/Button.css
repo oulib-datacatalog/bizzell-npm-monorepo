@@ -11,7 +11,7 @@
 .button.disabled {
   background-color: #9999a3 !important;
   color: #222233;
-  cursor: inherit;
+  cursor: not-allowed;
 }
 
 .primary {

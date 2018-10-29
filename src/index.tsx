@@ -4,7 +4,6 @@ import styles from './index.css'
 import { Button, joinNames, justifyCenter, alignCenter } from './core'
 
 const { root } = styles
-console.log(root)
 
 render(
   <div className={joinNames(root, justifyCenter, alignCenter)}>

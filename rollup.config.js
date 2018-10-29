@@ -6,7 +6,6 @@ import typescript from 'rollup-plugin-typescript'
 import replace from 'rollup-plugin-replace'
 import html from 'rollup-plugin-fill-html'
 import serve from 'rollup-plugin-serve'
-import visualizer from 'rollup-plugin-visualizer'
 import gzip from 'rollup-plugin-gzip'
 
 // If running in watch mode, assume dev mode.
@@ -51,12 +50,6 @@ export default {
         production ? 'production' : 'development',
       ),
     }),
-    production &&
-      visualizer({
-        filename: './build/bundle.stats.html',
-        open: true,
-        sourcemap: true,
-      }),
     production && gzip(),
     html({
       template: 'src/index.html',

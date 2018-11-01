@@ -6,7 +6,8 @@
     "downlevelIteration": true,
     "lib": ["ES2016", "DOM"],
     "target": "ES2015",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "module": "esnext"
   },
   "exclude": ["build", "node_modules"]
 }

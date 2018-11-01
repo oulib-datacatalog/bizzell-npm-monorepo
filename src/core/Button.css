@@ -8,32 +8,32 @@
   transition: 0.2s;
 }
 
-.button.disabled {
+.button.buttonDisabled {
   background-color: #9999a3 !important;
   color: #222233;
   cursor: not-allowed;
 }
 
-.primary {
+.buttonPrimary {
   background-color: rgb(56, 72, 221);
 }
 
-.primary:hover {
+.buttonPrimary:hover {
   background-color: rgba(56, 72, 221, 0.8);
 }
 
-.danger {
+.buttonDanger {
   background-color: rgb(221, 72, 56);
 }
 
-.danger:hover {
+.buttonDanger:hover {
   background-color: rgba(221, 72, 56, 0.8);
 }
 
-.secondary {
+.buttonSecondary {
   color: #222233;
 }
 
-.secondary:hover {
+.buttonSecondary:hover {
   background-color: #ccccd3;
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Button.css'
-import { joinNames } from './styles'
+import { joinNames, ClassNames } from './styles'
 import { readOption } from './utils'
 const {
   button,
@@ -13,6 +13,7 @@ const {
 const types = ['primary', 'secondary', 'danger']
 
 type ButtonProps = {
+  classNames?: ClassNames
   disabled?: boolean
   primary?: boolean
   secondary?: boolean
@@ -25,15 +26,15 @@ type ButtonProps = {
 // TODO: need a Text Component
 export class Button extends React.Component<ButtonProps> {
   render() {
-    const { text, onClick, children, disabled } = this.props
+    const { text, onClick, children, disabled, classNames } = this.props
     if (children) {
       console.error('Use the "text" prop of Button instead of passing children')
     }
-    const type = readOption(types, this.props, 'primary')
+    const type = readOption(types, this.props, 'secondary')
     return (
       <div
         onClick={disabled ? undefined : onClick}
-        className={joinNames(button, {
+        className={joinNames(button, classNames, {
           [buttonPrimary]: type === 'primary',
           [buttonSecondary]: type === 'secondary',
           [buttonDanger]: type === 'danger',

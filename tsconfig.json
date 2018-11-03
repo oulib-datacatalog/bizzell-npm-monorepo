@@ -4,8 +4,8 @@
     "jsx": "react",
     "strict": true,
     "downlevelIteration": true,
-    "lib": ["ES2016", "DOM"],
-    "target": "ES2015",
+    "lib": ["es6", "dom"],
+    "target": "esnext",
     "moduleResolution": "node",
     "module": "esnext"
   },

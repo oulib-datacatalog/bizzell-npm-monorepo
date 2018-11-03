@@ -31,9 +31,10 @@
 }
 
 .buttonSecondary {
-  color: #222233;
+  padding: 8px;
+  color: #222299;
 }
 
 .buttonSecondary:hover {
-  background-color: #ccccd3;
+  color: #5555aa;
 }

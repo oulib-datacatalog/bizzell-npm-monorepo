@@ -1,6 +1,6 @@
 export { Button } from './Button'
 
-export { joinNames } from './styles'
+export { joinNames, ClassNames } from './styles'
 import styles from './styles.css'
 export const {
   justifyCenter,

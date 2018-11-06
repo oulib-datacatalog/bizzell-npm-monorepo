@@ -1,26 +1,33 @@
 {
-  "name": "placeholder",
-  "version": "0.0.0",
-  "description": "placeholder",
-  "main": "build/index.js",
+  "name": "@bizzell/monorepo",
+  "version": "1.0.0",
+  "description": "Monorepo containing pieces of the Bizzell frontend.",
+  "main": "package.json",
+  "dependencies": {
+    "husky": "^1.1.3",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.3",
+    "pretty-quick": "^1.8.0",
+    "ts-jest": "^23.10.4",
+    "tslib": "^1.9.3",
+    "tslint": "^5.11.0",
+    "tslint-react": "^3.6.0",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "^3.1.3"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^5.0.4",
+    "@types/jest": "^23.3.9",
+    "fs-extra": "^7.0.0"
+  },
   "scripts": {
+    "preinstall": "node ./scripts/propagate.js npm install",
     "precommit": "npm run prettier && npm run tslint && npm run test",
-    "tslint": "tslint -c tslint.json \"src/**/*.{ts,tsx}\"",
+    "tslint": "tslint -c tslint.json -e \"**/node_modules/**/*\" \"packages/**/*.{ts,tsx}\"",
     "prettier": "pretty-quick --staged",
-    "test": "jest",
-    "dev": "webpack-dev-server --mode development --hot --progress --color --port 3000 --open",
-    "build": "webpack -p"
+    "test": "node ./scripts/propagate.js npm run test",
+    "dev": "node ./scripts/testDev.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/OU-CS4263-fall2018/capstone-27th-sporadic.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/OU-CS4263-fall2018/capstone-27th-sporadic/issues"
-  },
-  "homepage": "https://github.com/OU-CS4263-fall2018/capstone-27th-sporadic#readme",
   "jest": {
     "transform": {
       "^.+\\.ts$": "ts-jest"
@@ -38,42 +45,17 @@
     "arrowParens": "avoid",
     "tabWidth": 2
   },
-  "devDependencies": {
-    "@babel/core": "7.1.2",
-    "@babel/plugin-syntax-dynamic-import": "7.0.0",
-    "@babel/preset-env": "7.1.0",
-    "@babel/preset-react": "7.0.0",
-    "@babel/preset-typescript": "7.1.0",
-    "@types/classnames": "2.2.6",
-    "@types/jest": "23.3.5",
-    "@types/react": "16.4.18",
-    "@types/react-dom": "16.0.9",
-    "babel-loader": "8.0.4",
-    "compression-webpack-plugin": "2.0.0",
-    "css-loader": "1.0.1",
-    "html-webpack-plugin": "3.2.0",
-    "husky": "1.1.3",
-    "jest": "23.6.0",
-    "mini-css-extract-plugin": "0.4.4",
-    "prettier": "1.14.3",
-    "pretty-quick": "1.8.0",
-    "react-hot-loader": "4.3.11",
-    "style-loader": "0.23.1",
-    "ts-jest": "23.10.4",
-    "ts-loader": "5.3.0",
-    "tslib": "1.9.3",
-    "tslint": "5.11.0",
-    "tslint-config-prettier": "1.15.0",
-    "tslint-react": "3.6.0",
-    "typescript": "3.1.3",
-    "webpack": "4.23.1",
-    "webpack-cleanup-plugin": "0.5.1",
-    "webpack-cli": "3.1.2",
-    "webpack-dev-server": "3.1.10"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OU-CS4263-fall2018/capstone-27th-sporadic.git"
   },
-  "dependencies": {
-    "classnames": "2.2.6",
-    "react": "16.5.2",
-    "react-dom": "16.5.2"
-  }
+  "keywords": [
+    "wysiwyg"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OU-CS4263-fall2018/capstone-27th-sporadic/issues"
+  },
+  "homepage": "https://github.com/OU-CS4263-fall2018/capstone-27th-sporadic#readme"
 }

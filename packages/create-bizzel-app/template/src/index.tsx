@@ -1,7 +1,7 @@
 import { render } from 'react-dom'
 import React from 'react'
 import styles from './index.css'
-import { Button, joinNames, justifyCenter, alignCenter } from './core'
+import { Button, joinNames, justifyCenter, alignCenter } from '@bizzell/tempest'
 
 const { root } = styles
 

@@ -1,0 +1,63 @@
+{
+  "name": "@bizzell/tempest",
+  "version": "1.0.0",
+  "description": "Bizzell standard component library.",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "files": [
+    "lib/index.bundle.js",
+    "lib/**/**.*",
+    "src/**/*"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OU-CS4263-fall2018/capstone-27th-sporadic.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OU-CS4263-fall2018/capstone-27th-sporadic/issues"
+  },
+  "homepage": "https://github.com/OU-CS4263-fall2018/capstone-27th-sporadic#readme",
+  "jest": {
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "(\\.|/)test\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "arrowParens": "avoid",
+    "tabWidth": 2
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.6",
+    "@types/jest": "^23.3.1",
+    "@types/react": "^16.4.18",
+    "@types/react-dom": "^16.0.9",
+    "husky": "^0.14.3",
+    "jest": "^23.5.0",
+    "prettier": "^1.14.2",
+    "pretty-quick": "^1.6.0",
+    "rollup": "^0.66.6",
+    "rollup-plugin-postcss": "^1.6.2",
+    "rollup-plugin-typescript": "^1.0.0",
+    "ts-jest": "^23.1.4",
+    "tslib": "^1.9.3",
+    "typescript": "^3.0.3"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
+  }
+}

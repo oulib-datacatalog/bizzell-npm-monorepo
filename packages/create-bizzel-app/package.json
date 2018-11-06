@@ -1,0 +1,40 @@
+{
+  "name": "@bizzell/create-bizzell-app",
+  "description": "The only system dependency of this project is nodejs. This project is OS and IDE agnostic, though I recommend a modern text editor. @DuncanWalter uses and recommends `VSCode` (not to be confused with `Visual Studio`).",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "bin": {
+    "create-bizzell-app": "src/cli.js"
+  },
+  "dependencies": {
+    "@babel/core": "7.1.2",
+    "@babel/plugin-syntax-dynamic-import": "7.0.0",
+    "@babel/preset-env": "7.1.0",
+    "@babel/preset-react": "7.0.0",
+    "@babel/preset-typescript": "7.1.0",
+    "babel-loader": "^8.0.4",
+    "compression-webpack-plugin": "2.0.0",
+    "css-loader": "1.0.1",
+    "html-webpack-plugin": "3.2.0",
+    "mini-css-extract-plugin": "0.4.4",
+    "style-loader": "0.23.1",
+    "ts-loader": "5.3.0",
+    "typescript": "^3.1.6",
+    "webpack": "4.23.1",
+    "webpack-dev-server": "3.1.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OU-CS4263-fall2018/capstone-27th-sporadic.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OU-CS4263-fall2018/capstone-27th-sporadic/issues"
+  },
+  "homepage": "https://github.com/OU-CS4263-fall2018/capstone-27th-sporadic#readme"
+}

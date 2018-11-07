@@ -21,7 +21,7 @@
     "fs-extra": "^7.0.0"
   },
   "scripts": {
-    "preinstall": "node ./scripts/propagate.js npm install",
+    "postinstall": "node ./scripts/propagate.js npm install",
     "precommit": "npm run prettier && npm run tslint && npm run test",
     "tslint": "tslint -c tslint.json -e \"**/node_modules/**/*\" \"packages/**/*.{ts,tsx}\"",
     "prettier": "pretty-quick --staged",

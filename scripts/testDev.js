@@ -6,7 +6,7 @@ const cwd = process.cwd()
 const app = 'test-app'
 
 console.log('> linking cli tools...')
-execSync('npm link packages/create-bizzell-app', { shell: true })
+execSync('npm link ./packages/create-bizzell-app', { shell: true })
 
 console.log('> creating a test-app...')
 execSync(`create-bizzell-app --path=${app}`, { shell: true })

@@ -8,22 +8,26 @@ type Props = {
   checkedIcon?: any
   uncheckedIcon?: any
 }
-
 const types = ['checkbox']
 
-export default class Checkbox extends React.Component<Props, {}> {
-  private textInput!: HTMLInputElement
+export default class Checkbox extends React.Component<Props, {isChecked: boolean}> {
 
-  state = {
-    isChecked: false,
+  constructor(props:Props)
+  {
+    super(props);
+
+    this.state = {isChecked: false}
   }
 
-  handleChange = () => {
-    const isInputChecked = this.textInput.checked
-    this.setState({ isChecked: isInputChecked })
-  }
+
 
   render() {
+
+    const handleChange = (event:any) => {
+        const isInputChecked = event.target.checked
+        this.setState({ isChecked: isInputChecked })
+      }
+
     const { label } = this.props
     const { isChecked } = this.state
 
@@ -34,7 +38,7 @@ export default class Checkbox extends React.Component<Props, {}> {
             type="checkbox"
             value={label}
             checked={isChecked}
-            onChange={this.handleChange}
+            onChange={handleChange}
           />
 
           {label}

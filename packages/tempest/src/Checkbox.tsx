@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
@@ -8,25 +7,24 @@ type Props = {
   checkedIcon?: any
   uncheckedIcon?: any
 }
+
 const types = ['checkbox']
 
-export default class Checkbox extends React.Component<Props, {isChecked: boolean}> {
+export default class Checkbox extends React.Component<
+  Props,
+  { isChecked: boolean }
+> {
+  constructor(props: Props) {
+    super(props)
 
-  constructor(props:Props)
-  {
-    super(props);
-
-    this.state = {isChecked: false}
+    this.state = { isChecked: false }
   }
 
-
-
   render() {
-
-    const handleChange = (event:any) => {
-        const isInputChecked = event.target.checked
-        this.setState({ isChecked: isInputChecked })
-      }
+    const handleChange = (event: any) => {
+      const isInputChecked = event.target.checked
+      this.setState({ isChecked: isInputChecked })
+    }
 
     const { label } = this.props
     const { isChecked } = this.state
@@ -47,49 +45,3 @@ export default class Checkbox extends React.Component<Props, {isChecked: boolean
     )
   }
 }
-=======
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-
-type Props = {
-  label?: string
-  defaultChecked?: boolean
-  checkedIcon?: any
-  uncheckedIcon?: any
-}
-
-const types = ['checkbox']
-
-export default class Checkbox extends React.Component<Props, {}> {
-  private textInput!: HTMLInputElement
-
-  state = {
-    isChecked: false,
-  }
-
-  handleChange = () => {
-    const isInputChecked = this.textInput.checked
-    this.setState({ isChecked: isInputChecked })
-  }
-
-  render() {
-    const { label } = this.props
-    const { isChecked } = this.state
-
-    return (
-      <div className="checkbox">
-        <label>
-          <input
-            type="checkbox"
-            value={label}
-            checked={isChecked}
-            onChange={this.handleChange}
-          />
-
-          {label}
-        </label>
-      </div>
-    )
-  }
-}
->>>>>>> checkbox changes

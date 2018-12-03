@@ -45,7 +45,10 @@ module.exports = function createConfig(production, target) {
                     targets: 'last 1 version, not dead, > 1% in US',
                   }),
                 ),
-                plugins: clean(require('@babel/plugin-syntax-dynamic-import')),
+                plugins: clean(
+                  require('@babel/plugin-syntax-dynamic-import'),
+                  require('@babel/plugin-syntax-class-properties'),
+                ),
               },
             },
             production && require.resolve('ts-loader'),

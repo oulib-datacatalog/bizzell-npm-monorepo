@@ -9,9 +9,7 @@
     "lib/**/**.*",
     "src/**/*"
   ],
-  "scripts": {
-    "test": "jest"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OU-CS4263-fall2018/capstone-27th-sporadic.git"

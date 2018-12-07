@@ -18,32 +18,16 @@
     "@types/fs-extra": "^5.0.4",
     "@types/jest": "^23.3.9",
     "fs-extra": "^7.0.0",
-    "husky": "^1.1.3"
+    "husky": "^1.1.3",
+    "lerna": "^3.5.1"
   },
   "scripts": {
-    "postinstall": "node ./scripts/propagate.js npm install",
+    "postinstall": "lerna bootstrap",
     "precommit": "npm run prettier && npm run tslint && npm run test",
     "tslint": "tslint -c tslint.json -e \"**/node_modules/**/*\" \"packages/**/*.{ts,tsx}\"",
     "prettier": "pretty-quick --staged",
-    "test": "node ./scripts/propagate.js npm run test",
-    "dev": "node ./scripts/testDev.js"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.ts$": "ts-jest"
-    },
-    "testRegex": "(\\.|/)test\\.ts$",
-    "moduleFileExtensions": [
-      "ts",
-      "js"
-    ]
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "all",
-    "arrowParens": "avoid",
-    "tabWidth": 2
+    "test": "lerna run test --loglevel=verbose --no-bail",
+    "dev": "lerna run dev --stream"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,27 @@
+.textStyle {
+  border-radius: 4px;
+  font-family: sans-serif;
+  color: #000000;
+  transition: 0.2s;
+  margin: 8px 12px 8px 12px;
+}
+
+.textBody {
+  font-size: 18px;
+}
+
+.textCaption {
+  font-size: 12px;
+}
+
+.textDisplay {
+  font-size: 90px;
+}
+
+.textTitle {
+  font-size: 54px;
+}
+
+.textButton {
+  font-size: 18px;
+}

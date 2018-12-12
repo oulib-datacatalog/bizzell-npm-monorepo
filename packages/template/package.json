@@ -66,6 +66,7 @@
   },
   "dependencies": {
     "@bizzell/tempest": "^1.0.0",
+    "@bizzell/wizard": "1.0.0",
     "classnames": "2.2.6",
     "react": "16.5.2",
     "react-dom": "16.5.2"

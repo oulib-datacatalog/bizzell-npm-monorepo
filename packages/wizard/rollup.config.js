@@ -1,8 +1,6 @@
 const typescript = require('rollup-plugin-typescript2')
 const postcss = require('rollup-plugin-postcss')
 const babel = require('rollup-plugin-babel')
-// const resolve = require('rollup-plugin-node-resolve')
-// const commonjs = require('rollup-plugin-commonjs')
 
 function clean(...entries) {
   return entries.filter(e => e)
@@ -42,7 +40,7 @@ function createConfig(mode) {
 }
 
 if (process.argv.includes('-w')) {
-  module.exports = [{ umd: false }, { umd: false }].map(createConfig)
+  module.exports = [{ umd: false }].map(createConfig)
 } else {
   module.exports = [{ umd: true }, { umd: false }].map(createConfig)
 }

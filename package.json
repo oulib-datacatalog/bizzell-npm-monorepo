@@ -11,7 +11,7 @@
     "postinstall": "lerna bootstrap",
     "precommit": "lerna run lint && lerna run test",
     "test": "lerna run test --loglevel=verbose --no-bail",
-    "dev": "lerna run dev --stream",
+    "dev": "lerna run dev --stream --parallel",
     "lerna": "lerna exec"
   },
   "repository": {

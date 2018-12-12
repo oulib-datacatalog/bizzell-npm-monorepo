@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Text.css'
-import { joinNames, ClassNames } from './styles'
+import { joinNames, ClassNames } from './classNames'
 import { readOption } from './utils'
 const {
   textStyle,

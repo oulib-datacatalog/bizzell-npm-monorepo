@@ -1,24 +1,22 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-type Props = {
-  label?: string
+interface CheckboxProps {
+  text?: string
   defaultChecked?: boolean
   defaultEnabled?: boolean
-  checkedIcon?: any
-  uncheckedIcon?: any
 }
 
 const types = ['checkbox']
 
 export default class Checkbox extends React.Component<
-  Props,
+  CheckboxProps,
   {
     isChecked: boolean
     isEnabled: boolean
   }
 > {
-  constructor(props: Props) {
+  constructor(props: CheckboxProps) {
     super(props)
 
     this.state = { isChecked: false, isEnabled: true }
@@ -28,11 +26,11 @@ export default class Checkbox extends React.Component<
     const handleChange = (event: any) => {
       if (this.state.isEnabled) {
         const isInputChecked = event.target.checked
-        this.setState({ isChecked: isInputChecked })
+        this.setState(state => ({ isChecked: !state.isChecked }))
       }
     }
 
-    const { label } = this.props
+    const { text } = this.props
     const { isChecked } = this.state
     const { isEnabled } = this.state
 
@@ -41,12 +39,12 @@ export default class Checkbox extends React.Component<
         <label>
           <input
             type="checkbox"
-            value={label}
+            value={text}
             checked={isChecked}
             onChange={handleChange}
           />
 
-          {label}
+          {text}
         </label>
       </div>
     )

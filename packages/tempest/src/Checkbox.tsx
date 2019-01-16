@@ -9,7 +9,7 @@ interface CheckboxProps {
 
 const types = ['checkbox']
 
-export default class Checkbox extends React.Component<
+export class Checkbox extends React.Component<
   CheckboxProps,
   {
     isChecked: boolean
@@ -22,17 +22,17 @@ export default class Checkbox extends React.Component<
     this.state = { isChecked: false, isEnabled: true }
   }
 
-  render() {
-    const handleChange = (event: any) => {
-      if (this.state.isEnabled) {
-        const isInputChecked = event.target.checked
-        this.setState(state => ({ isChecked: !state.isChecked }))
-      }
+  handleChange(event: any) {
+    if (this.state.isEnabled) {
+      const isInputChecked = event.target.checked
+      this.setState(state => ({ isChecked: !state.isChecked }))
     }
+  }
+  
+  render() {
 
     const { text } = this.props
-    const { isChecked } = this.state
-    const { isEnabled } = this.state
+    const { isChecked, isEnabled } = this.state
 
     return (
       <div className="checkbox">
@@ -41,7 +41,7 @@ export default class Checkbox extends React.Component<
             type="checkbox"
             value={text}
             checked={isChecked}
-            onChange={handleChange}
+            onChange={event => this.handleChange(event)}
           />
 
           {text}

@@ -25,14 +25,14 @@ export class Checkbox extends React.Component<
   handleChange(event: any) {
     if (this.state.isEnabled) {
       const isInputChecked = event.target.checked
-      this.setState(state => ({ isChecked: !state.isChecked }))
+      this.setState(state => ({ isChecked: isInputChecked }))
     }
   }
   
   render() {
 
     const { text } = this.props
-    const { isChecked, isEnabled } = this.state
+    const { isChecked } = this.state
 
     return (
       <div className="checkbox">

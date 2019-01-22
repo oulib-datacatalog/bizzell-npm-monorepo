@@ -1,7 +1,9 @@
 import React from 'react'
 import styles from './Button.css'
-import { joinNames, ClassNames } from './styles'
+import { Text } from './Text'
+import { joinNames, ClassNames } from './classNames'
 import { readOption } from './utils'
+
 const {
   button,
   buttonPrimary,
@@ -41,7 +43,7 @@ export class Button extends React.Component<ButtonProps> {
           [buttonDisabled]: this.props.disabled,
         })}
       >
-        {text}
+        <Text text={text} button />
       </div>
     )
   }

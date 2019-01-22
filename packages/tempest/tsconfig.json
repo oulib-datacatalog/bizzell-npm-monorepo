@@ -3,11 +3,10 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "strict": true,
-    "downlevelIteration": true,
     "lib": ["es6", "dom"],
     "target": "esnext",
     "moduleResolution": "node",
     "module": "esnext"
   },
-  "exclude": ["build", "node_modules"]
+  "exclude": ["node_modules/**"]
 }

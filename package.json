@@ -3,47 +3,16 @@
   "version": "1.0.0",
   "description": "Monorepo containing pieces of the Bizzell frontend.",
   "main": "package.json",
-  "dependencies": {
-    "jest": "^23.6.0",
-    "prettier": "^1.14.3",
-    "pretty-quick": "^1.8.0",
-    "ts-jest": "^23.10.4",
-    "tslib": "^1.9.3",
-    "tslint": "^5.11.0",
-    "tslint-react": "^3.6.0",
-    "tslint-config-prettier": "^1.15.0",
-    "typescript": "^3.1.3"
-  },
   "devDependencies": {
-    "@types/fs-extra": "^5.0.4",
-    "@types/jest": "^23.3.9",
-    "fs-extra": "^7.0.0",
-    "husky": "^1.1.3"
+    "husky": "^1.1.3",
+    "lerna": "^3.5.1"
   },
   "scripts": {
-    "postinstall": "node ./scripts/propagate.js npm install",
-    "precommit": "npm run prettier && npm run tslint && npm run test",
-    "tslint": "tslint -c tslint.json -e \"**/node_modules/**/*\" \"packages/**/*.{ts,tsx}\"",
-    "prettier": "pretty-quick --staged",
-    "test": "node ./scripts/propagate.js npm run test",
-    "dev": "node ./scripts/testDev.js"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.ts$": "ts-jest"
-    },
-    "testRegex": "(\\.|/)test\\.ts$",
-    "moduleFileExtensions": [
-      "ts",
-      "js"
-    ]
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "all",
-    "arrowParens": "avoid",
-    "tabWidth": 2
+    "postinstall": "lerna bootstrap",
+    "precommit": "lerna run lint && lerna run test",
+    "test": "lerna run test --loglevel=verbose --no-bail",
+    "dev": "lerna run dev --stream --parallel",
+    "lerna": "lerna exec"
   },
   "repository": {
     "type": "git",

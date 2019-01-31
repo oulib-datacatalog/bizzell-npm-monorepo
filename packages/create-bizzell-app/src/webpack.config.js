@@ -56,6 +56,19 @@ module.exports = function createConfig(production, target) {
         },
         {
           test: /\.css$/,
+          include: /node_modules/,
+          use: [
+            production
+              ? MiniCssExtractPlugin.loader
+              : require.resolve('style-loader'),
+            {
+              loader: require.resolve('css-loader'),
+            },
+          ],
+        },
+        {
+          test: /\.css$/,
+          exclude: /node_modules/,
           use: [
             production
               ? MiniCssExtractPlugin.loader
@@ -73,6 +86,12 @@ module.exports = function createConfig(production, target) {
             },
           ],
         },
+        {
+          test: /\.(svg|woff|woff2|ttf|eot)$/,
+          use: [
+            require.resolve('file-loader')
+          ]
+        }
       ],
     },
     plugins: clean(
@@ -92,6 +111,10 @@ module.exports = function createConfig(production, target) {
         }),
       new HtmlWebpackPlugin({
         template: join(sourcePath, 'index.html'),
+      }),
+      new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery"
       }),
     ),
     devServer: {

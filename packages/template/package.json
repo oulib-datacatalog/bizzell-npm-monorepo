@@ -68,7 +68,9 @@
     "@bizzell/tempest": "^1.0.0",
     "@bizzell/wizard": "1.0.0",
     "classnames": "2.2.6",
+    "font-awesome": "^4.7.0",
     "react": "16.5.2",
-    "react-dom": "16.5.2"
+    "react-dom": "16.5.2",
+    "react-froala-wysiwyg": "^2.9.1-1"
   }
 }

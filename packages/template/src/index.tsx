@@ -1,26 +1,50 @@
 import { render } from 'react-dom'
+import ReactDOM from 'react-dom'
 import React from 'react'
 import styles from './index.css'
-import { Button, joinNames, justifyCenter, alignCenter } from '@bizzell/tempest'
+import {
+  Button,
+  joinNames,
+  justifyCenter,
+  alignCenter,
+  justifyEnd,
+} from '@bizzell/tempest'
 import { DisplayRenderer, LayoutRoot } from '@bizzell/wizard'
 
-const { root } = styles
+// Require Editor JS files.
+import 'froala-editor/js/froala_editor.pkgd.min.js'
+
+// Require Editor CSS files.
+import 'froala-editor/css/froala_style.min.css'
+import 'froala-editor/css/froala_editor.pkgd.min.css'
+
+// Require Font Awesome.
+import 'font-awesome/css/font-awesome.css'
+
+import FroalaEditor from 'react-froala-wysiwyg'
+
+const { root, editorContainer } = styles
+
+// Render Froala Editor component.
 
 function ButtonDemo() {
   return (
     <div>
-      <Button
-        text="Hello World!"
-        secondary
-        onClick={() =>
-          import('./dynamic').then(dynamic => {
-            dynamic.assertImported()
-          })
-        }
-      />
-      <Button text="Hello World!" disabled />
-      <Button text="Hello World!" primary />
-      <Button text="Hello World!" danger />
+      <div className={editorContainer}>
+        <FroalaEditor tag="textarea" />
+      </div>
+      <div className={justifyEnd}>
+        <Button
+          text="Hello World!"
+          secondary
+          onClick={() =>
+            import('./dynamic').then(dynamic => {
+              dynamic.assertImported()
+            })
+          }
+        />
+        <Button text="Hello World!" primary />
+      </div>
     </div>
   )
 }
@@ -39,7 +63,7 @@ const layoutRoot: LayoutRoot = {
 
 render(
   <div className={joinNames(root, justifyCenter, alignCenter)}>
-    <div style={{ padding: '24px 12px 24px', backgroundColor: '#ffffff' }}>
+    <div style={{ padding: '24px 24px 24px 24px', backgroundColor: '#ffffff' }}>
       <DisplayRenderer {...layoutRoot} />
     </div>
   </div>,

@@ -3,3 +3,7 @@
   min-height: 100vh;
   background-color: #ddddee;
 }
+
+.editorContainer {
+  margin-bottom: 24px;
+}

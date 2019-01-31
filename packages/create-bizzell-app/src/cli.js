@@ -36,7 +36,7 @@ const path =
 switch (mode) {
   case 'create': {
     // copy the template to the path
-    copySync(join(__dirname, '../template'), path)
+    copySync(join(__dirname, './template'), path)
     break
   }
   case 'edit': {

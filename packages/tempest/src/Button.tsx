@@ -1,4 +1,4 @@
-import React from 'react'
+import Vue from 'vue'
 import styles from './Button.css'
 import { Text } from './Text'
 import { joinNames, ClassNames } from './classNames'
@@ -26,8 +26,8 @@ type ButtonProps = {
 }
 
 // TODO: need a Text Component
-export class Button extends React.Component<ButtonProps> {
-  render() {
+export const Button = {
+  render(h) {
     const { text, onClick, children, disabled, classNames } = this.props
     if (children) {
       console.error('Use the "text" prop of Button instead of passing children')
@@ -46,5 +46,7 @@ export class Button extends React.Component<ButtonProps> {
         <Text text={text} button />
       </div>
     )
-  }
+  },
 }
+
+const foo = Vue.component('tempest-button', Button)

@@ -35,7 +35,10 @@ function createConfig(mode) {
             },
           ],
         ],
-        plugins: ['@babel/plugin-syntax-class-properties'],
+        plugins: [
+          '@babel/plugin-syntax-class-properties',
+          '@vue/babel-preset-jsx',
+        ],
       }),
     ),
   }

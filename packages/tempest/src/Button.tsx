@@ -3,6 +3,8 @@ import { Text } from './Text'
 import { joinNames, ClassNames } from './classNames'
 import { readOption, createComponent } from './utils'
 
+const types = ['primary', 'secondary', 'danger']
+
 const {
   button,
   buttonPrimary,
@@ -10,8 +12,6 @@ const {
   buttonDanger,
   buttonDisabled,
 } = styles
-
-const types = ['primary', 'secondary', 'danger']
 
 type ButtonProps = {
   classNames?: ClassNames

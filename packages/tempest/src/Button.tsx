@@ -1,8 +1,7 @@
-import Vue from 'vue'
 import styles from './Button.css'
 import { Text } from './Text'
 import { joinNames, ClassNames } from './classNames'
-import { readOption } from './utils'
+import { readOption, createComponent } from './utils'
 
 const {
   button,
@@ -26,27 +25,23 @@ type ButtonProps = {
 }
 
 // TODO: need a Text Component
-export const Button = {
-  render(h) {
-    const { text, onClick, children, disabled, classNames } = this.props
-    if (children) {
-      console.error('Use the "text" prop of Button instead of passing children')
-    }
-    const type = readOption(types, this.props, 'secondary')
-    return (
-      <div
-        onClick={disabled ? undefined : onClick}
-        className={joinNames(button, classNames, {
-          [buttonPrimary]: type === 'primary',
-          [buttonSecondary]: type === 'secondary',
-          [buttonDanger]: type === 'danger',
-          [buttonDisabled]: this.props.disabled,
-        })}
-      >
-        <Text text={text} button />
-      </div>
-    )
-  },
-}
-
-const foo = Vue.component('tempest-button', Button)
+export const Button = createComponent<ButtonProps>((_, ctx) => {
+  const { text, onClick, disabled, classNames } = ctx.props
+  if (ctx.children) {
+    console.error('Use the "text" prop of Button instead of passing children')
+  }
+  const type = readOption(types, ctx.props, 'secondary')
+  return (
+    <div
+      onClick={disabled ? undefined : onClick}
+      className={joinNames(button, classNames, {
+        [buttonPrimary]: type === 'primary',
+        [buttonSecondary]: type === 'secondary',
+        [buttonDanger]: type === 'danger',
+        [buttonDisabled]: ctx.props.disabled,
+      })}
+    >
+      <Text text={text} button />
+    </div>
+  )
+})

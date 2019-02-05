@@ -1,7 +1,7 @@
-import React from 'react'
 import styles from './Text.css'
 import { joinNames, ClassNames } from './classNames'
-import { readOption } from './utils'
+import { readOption, createComponent } from './utils'
+
 const {
   textStyle,
   textBody,
@@ -25,34 +25,22 @@ type TextProps = {
 }
 
 // TODO: need a Text Component
-export class Text extends React.Component<TextProps> {
-  render() {
-    const { text, classNames } = this.props
+export const Text = createComponent<TextProps>((_, ctx) => {
+  const { text, classNames } = ctx.props
 
-    const type = readOption(types, this.props)
-    if (type == 'title' || type == 'display') {
-      return (
-        <h1
-          className={joinNames(textStyle, classNames, {
-            [textDisplay]: type === 'display',
-            [textTitle]: type === 'title',
-          })}
-        >
-          {text}
-        </h1>
-      )
-    } else {
-      return (
-        <p
-          className={joinNames(textStyle, classNames, {
-            [textBody]: type === 'body',
-            [textCaption]: type === 'caption',
-            [textButton]: type === 'button',
-          })}
-        >
-          {text}
-        </p>
-      )
-    }
+  const type = readOption(types, ctx.props)
+
+  const className = joinNames(textStyle, classNames, {
+    [textDisplay]: type === 'display',
+    [textTitle]: type === 'title',
+    [textBody]: type === 'body',
+    [textCaption]: type === 'caption',
+    [textButton]: type === 'button',
+  })
+
+  if (type == 'title' || type == 'display') {
+    return <h1 className={className}>{text}</h1>
+  } else {
+    return <p className={className}>{text}</p>
   }
-}
+})

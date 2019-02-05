@@ -1,3 +1,6 @@
+import Vue from 'vue'
+import { FunctionalComponentOptions } from 'vue'
+
 /**
  * Interprets a props object to extract an option and performs
  * checks to ensure multiple options of the same category are
@@ -23,4 +26,19 @@ export function readOption(
         return true
       }) || defaultValue
   )
+}
+
+export function createComponent<Props>(
+  render: FunctionalComponentOptions<Props>['render'],
+) {
+  const Component = class extends Vue {
+    static functional: true = true
+    static render = render
+
+    constructor(props: Props) {
+      super(props)
+    }
+  }
+
+  return Component
 }

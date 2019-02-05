@@ -1,14 +1,6 @@
-import { render } from 'react-dom'
-import ReactDOM from 'react-dom'
-import React from 'react'
+import Vue from 'vue'
 import styles from './index.css'
-import {
-  Button,
-  joinNames,
-  justifyCenter,
-  alignCenter,
-  justifyEnd,
-} from '@bizzell/tempest'
+import { Button, justifyEnd } from '@bizzell/tempest'
 import { DisplayRenderer, LayoutRoot } from '@bizzell/wizard'
 
 // Require Editor JS files.
@@ -21,7 +13,7 @@ import 'froala-editor/css/froala_editor.pkgd.min.css'
 // Require Font Awesome.
 import 'font-awesome/css/font-awesome.css'
 
-import FroalaEditor from 'react-froala-wysiwyg'
+import FroalaEditor from 'vue-froala-wysiwyg'
 
 const { root, editorContainer } = styles
 
@@ -61,11 +53,18 @@ const layoutRoot: LayoutRoot = {
   },
 }
 
-render(
-  <div className={joinNames(root, justifyCenter, alignCenter)}>
-    <div style={{ padding: '24px 24px 24px 24px', backgroundColor: '#ffffff' }}>
-      <DisplayRenderer {...layoutRoot} />
-    </div>
-  </div>,
-  document.getElementById('anchor')!,
-)
+// render(
+//   <div className={joinNames(root, justifyCenter, alignCenter)}>
+//     <div style={{ padding: '24px 24px 24px 24px', backgroundColor: '#ffffff' }}>
+//       <DisplayRenderer {...layoutRoot} />
+//     </div>
+//   </div>,
+//   document.getElementById('anchor')!,
+// )
+
+const app = new Vue({
+  el: '#anchor',
+  render(h) {
+    return <p>sup</p>
+  },
+})

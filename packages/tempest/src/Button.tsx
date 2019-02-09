@@ -19,13 +19,15 @@ type ButtonProps = {
   primary?: boolean
   secondary?: boolean
   danger?: boolean
-  type?: 'primary' | 'secondary' | 'danger'
+  type?: typeof types[number]
   text?: string
   onClick?: () => unknown
 }
 
+function noop() {}
+
 // TODO: need a Text Component
-export const Button = createComponent<ButtonProps>((_, ctx) => {
+export const Button = createComponent<ButtonProps>((h, ctx) => {
   const { text, onClick, disabled, classNames } = ctx.props
   if (ctx.children) {
     console.error('Use the "text" prop of Button instead of passing children')
@@ -33,7 +35,7 @@ export const Button = createComponent<ButtonProps>((_, ctx) => {
   const type = readOption(types, ctx.props, 'secondary')
   return (
     <div
-      onClick={disabled ? undefined : onClick}
+      onClick={disabled ? noop : onClick || noop}
       className={joinNames(button, classNames, {
         [buttonPrimary]: type === 'primary',
         [buttonSecondary]: type === 'secondary',

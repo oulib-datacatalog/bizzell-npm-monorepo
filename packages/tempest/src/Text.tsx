@@ -25,7 +25,7 @@ type TextProps = {
 }
 
 // TODO: need a Text Component
-export const Text = createComponent<TextProps>((_, ctx) => {
+export const Text = createComponent<TextProps>((h, ctx) => {
   const { text, classNames } = ctx.props
 
   const type = readOption(types, ctx.props)

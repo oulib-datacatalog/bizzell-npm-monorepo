@@ -26,7 +26,7 @@ module.exports = function createConfig(production, target) {
     },
     target: 'web',
     resolve: {
-      extensions: ['.js', '.ts', '.tsx'],
+      extensions: ['.js', 'jsx', '.ts', '.tsx'],
       mainFields: ['module', 'browser', 'main'],
     },
     module: {
@@ -38,7 +38,7 @@ module.exports = function createConfig(production, target) {
               loader: require.resolve('babel-loader'),
               options: {
                 presets: clean(
-                  production || require('@babel/preset-react'),
+                  production || require('@vue/babel-preset-jsx'),
                   production || require('@babel/preset-typescript'),
                   clean(require('@babel/preset-env'), {
                     modules: false,
@@ -88,10 +88,8 @@ module.exports = function createConfig(production, target) {
         },
         {
           test: /\.(svg|woff|woff2|ttf|eot)$/,
-          use: [
-            require.resolve('file-loader')
-          ]
-        }
+          use: [require.resolve('file-loader')],
+        },
       ],
     },
     plugins: clean(
@@ -113,8 +111,8 @@ module.exports = function createConfig(production, target) {
         template: join(sourcePath, 'index.html'),
       }),
       new webpack.ProvidePlugin({
-        $: "jquery",
-        jQuery: "jquery"
+        $: 'jquery',
+        jQuery: 'jquery',
       }),
     ),
     devServer: {

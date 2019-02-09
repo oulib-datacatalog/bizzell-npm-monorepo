@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import styles from './index.css'
 import { Button, justifyEnd } from '@bizzell/tempest'
-import { DisplayRenderer, LayoutRoot } from '@bizzell/wizard'
+// import { LayoutRoot } from '@bizzell/wizard'
 
 // Require Editor JS files.
 import 'froala-editor/js/froala_editor.pkgd.min.js'
@@ -15,56 +15,58 @@ import 'font-awesome/css/font-awesome.css'
 
 import FroalaEditor from 'vue-froala-wysiwyg'
 
-const { root, editorContainer } = styles
+Vue.use(FroalaEditor)
+
+new Vue({
+  el: '#anchor',
+  render(h) {
+    return (
+      <div>
+        <froala />
+        <p>sup</p>
+        <div className={justifyEnd}>
+          <Button secondary text="not me" />
+          <Button primary text="heyo" />
+        </div>
+      </div>
+    )
+  },
+})
+
+// const { editorContainer } = styles
 
 // Render Froala Editor component.
 
-function ButtonDemo() {
-  return (
-    <div>
-      <div className={editorContainer}>
-        <FroalaEditor tag="textarea" />
-      </div>
-      <div className={justifyEnd}>
-        <Button
-          text="Hello World!"
-          secondary
-          onClick={() =>
-            import('./dynamic').then(dynamic => {
-              dynamic.assertImported()
-            })
-          }
-        />
-        <Button text="Hello World!" primary />
-      </div>
-    </div>
-  )
-}
-
-const layoutRoot: LayoutRoot = {
-  appName: 'demo',
-  layout: {
-    type: 'custom',
-    customComponent: 'buttonDemo',
-    props: {},
-  },
-  customComponents: {
-    buttonDemo: ButtonDemo,
-  },
-}
-
-// render(
-//   <div className={joinNames(root, justifyCenter, alignCenter)}>
-//     <div style={{ padding: '24px 24px 24px 24px', backgroundColor: '#ffffff' }}>
-//       <DisplayRenderer {...layoutRoot} />
+// function ButtonDemo() {
+//   return (
+//     <div>
+//       <div className={editorContainer}>
+//         <FroalaEditor tag="textarea" />
+//       </div>
+//       <div className={justifyEnd}>
+//         <Button
+//           text="Hello World!"
+//           secondary
+//           onClick={() =>
+//             import('./dynamic').then(dynamic => {
+//               dynamic.assertImported()
+//             })
+//           }
+//         />
+//         <Button text="Hello World!" primary />
+//       </div>
 //     </div>
-//   </div>,
-//   document.getElementById('anchor')!,
-// )
+//   )
+// }
 
-const app = new Vue({
-  el: '#anchor',
-  render(h) {
-    return <p>sup</p>
-  },
-})
+// const layoutRoot: LayoutRoot = {
+//   appName: 'demo',
+//   layout: {
+//     type: 'custom',
+//     customComponent: 'buttonDemo',
+//     props: {},
+//   },
+//   customComponents: {
+//     buttonDemo: null, // ButtonDemo,
+//   },
+// }

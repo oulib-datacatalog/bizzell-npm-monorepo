@@ -1,7 +1,7 @@
 const typescript = require('rollup-plugin-typescript2')
 const postcss = require('rollup-plugin-postcss')
 const babel = require('rollup-plugin-babel')
-const resolve = require('rollup-plugin-node-resolve')
+// const resolve = require('rollup-plugin-node-resolve')
 
 function clean(...entries) {
   return entries.filter(e => e)
@@ -20,26 +20,38 @@ function createConfig(mode) {
       return !moduleName.includes('.')
     },
     plugins: clean(
-      resolve({
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.css'],
-      }),
       postcss({ modules: true, minimize: true }),
       typescript(),
-      babel({
-        exclude: 'node_modules/**',
-        presets: [
-          [
-            '@babel/env',
-            {
-              targets: { browsers: ['ie >= 11'] },
-              modules: !umd,
-              loose: true,
-            },
+      // {
+      //   transform(code, id) {
+      //     console.log(id)
+      //     console.log(code)
+      //   },
+      // },
+      babel(
+        {
+          exclude: 'node_modules/**',
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+          presets: [
+            '@vue/babel-preset-jsx',
+            [
+              '@babel/env',
+              {
+                targets: { browsers: ['ie >= 11'] },
+                modules: false,
+                loose: true,
+              },
+            ],
           ],
-          '@vue/babel-preset-jsx',
-        ],
-        plugins: ['@babel/plugin-syntax-class-properties'],
-      }),
+          plugins: ['@babel/plugin-syntax-class-properties'],
+        },
+        // {
+        //   transform(code, id) {
+        //     console.log(id)
+        //     console.log(code)
+        //   },
+        // },
+      ),
     ),
   }
 }

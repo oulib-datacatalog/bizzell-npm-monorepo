@@ -31,14 +31,10 @@ export function readOption(
 export function createComponent<Props>(
   render: FunctionalComponentOptions<Props>['render'],
 ) {
-  const Component = class extends Vue {
-    static functional: true = true
-    static render = render
-
-    constructor(props: Props) {
-      super(props)
-    }
+  const Component = {
+    functional: true,
+    render,
   }
 
-  return Component
+  return Component as any
 }

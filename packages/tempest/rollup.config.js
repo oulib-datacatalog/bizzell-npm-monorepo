@@ -29,7 +29,7 @@ function createConfig(mode) {
             '@babel/env',
             {
               targets: { browsers: ['ie >= 11'] },
-              modules: !umd,
+              modules: false,
               loose: true,
             },
           ],

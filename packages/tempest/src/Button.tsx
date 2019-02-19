@@ -25,7 +25,6 @@ type ButtonProps = {
   onClick?: () => unknown
 }
 
-// TODO: need a Text Component
 export class Button extends React.Component<ButtonProps> {
   render() {
     const { text, onClick, children, disabled, classNames } = this.props

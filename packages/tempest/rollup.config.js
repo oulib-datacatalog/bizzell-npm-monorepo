@@ -1,8 +1,6 @@
 const typescript = require('rollup-plugin-typescript2')
 const postcss = require('rollup-plugin-postcss')
 const babel = require('rollup-plugin-babel')
-// const resolve = require('rollup-plugin-node-resolve')
-// const commonjs = require('rollup-plugin-commonjs')
 
 function clean(...entries) {
   return entries.filter(e => e)
@@ -25,12 +23,13 @@ function createConfig(mode) {
       typescript(),
       babel({
         exclude: 'node_modules/**',
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
         presets: [
           [
             '@babel/env',
             {
               targets: { browsers: ['ie >= 11'] },
-              modules: !umd,
+              modules: false,
               loose: true,
             },
           ],

@@ -1,5 +1,4 @@
 import { render } from 'react-dom'
-import ReactDOM from 'react-dom'
 import React from 'react'
 import styles from './index.css'
 import {
@@ -11,21 +10,14 @@ import {
 } from '@bizzell/tempest'
 import { DisplayRenderer, LayoutRoot } from '@bizzell/wizard'
 
-// Require Editor JS files.
 import 'froala-editor/js/froala_editor.pkgd.min.js'
-
-// Require Editor CSS files.
 import 'froala-editor/css/froala_style.min.css'
 import 'froala-editor/css/froala_editor.pkgd.min.css'
-
-// Require Font Awesome.
 import 'font-awesome/css/font-awesome.css'
 
 import FroalaEditor from 'react-froala-wysiwyg'
 
 const { root, editorContainer } = styles
-
-// Render Froala Editor component.
 
 function ButtonDemo() {
   return (

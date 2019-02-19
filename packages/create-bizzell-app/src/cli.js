@@ -29,14 +29,14 @@ const path =
     .find(path => true) ||
   (() => {
     throw new Error(
-      'No path specified for create-bizzell-app (path=./path/to/target)',
+      'No path specified for create-bizzell-app (--path=./path/to/target)',
     )
   })()
 
 switch (mode) {
   case 'create': {
     // copy the template to the path
-    copySync(join(__dirname, './template'), path)
+    copySync(join(__dirname, '../template'), path)
     break
   }
   case 'edit': {

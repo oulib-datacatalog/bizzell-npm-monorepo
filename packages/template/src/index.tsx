@@ -19,6 +19,9 @@ import FroalaEditor from 'react-froala-wysiwyg'
 
 const { root, editorContainer } = styles
 
+import { Provider } from 'react-redux'
+import { store } from './store'
+
 function ButtonDemo() {
   return (
     <div>
@@ -54,10 +57,12 @@ const layoutRoot: LayoutRoot = {
 }
 
 render(
-  <div className={joinNames(root, justifyCenter, alignCenter)}>
-    <div style={{ padding: '24px 24px 24px 24px', backgroundColor: '#ffffff' }}>
-      <DisplayRenderer {...layoutRoot} />
+  <Provider store={store}>
+    <div className={joinNames(root, justifyCenter, alignCenter)}>
+      <div style={{ padding: '24px 12px 24px', backgroundColor: '#ffffff' }}>
+        <DisplayRenderer {...layoutRoot} />
+      </div>
     </div>
-  </div>,
+  </Provider>,
   document.getElementById('anchor')!,
 )

@@ -53,6 +53,7 @@
     "@types/jest": "23.3.5",
     "@types/react": "16.4.18",
     "@types/react-dom": "16.0.9",
+    "@types/react-redux": "^7.0.1",
     "husky": "1.1.3",
     "jest": "23.6.0",
     "lint-staged": "^8.1.0",
@@ -71,7 +72,10 @@
     "font-awesome": "^4.7.0",
     "froala-editor": "2.9.3",
     "react": "16.5.2",
+    "react-redux": "^6.0.1",
     "react-dom": "16.5.2",
-    "react-froala-wysiwyg": "^2.9.1-1"
+    "react-froala-wysiwyg": "^2.9.1-1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   }
 }

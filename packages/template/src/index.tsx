@@ -21,6 +21,7 @@ const { root, editorContainer } = styles
 
 import { Provider } from 'react-redux'
 import { store } from './store'
+import { connect } from 'react-redux'
 
 function ButtonDemo() {
   return (
@@ -44,6 +45,23 @@ function ButtonDemo() {
   )
 }
 
+function App() {
+  return (
+    <div className={joinNames(root, justifyCenter, alignCenter)}>
+      <div style={{ padding: '24px 12px 24px', backgroundColor: '#ffffff' }}>
+        <DisplayRenderer {...layoutRoot} />
+      </div>
+    </div>
+  )
+}
+
+const mapStateToProps = function(state) {
+  return {
+    state,
+  }
+}
+const AppContainer = connect(mapStateToProps)(App)
+
 const layoutRoot: LayoutRoot = {
   appName: 'demo',
   layout: {
@@ -58,11 +76,7 @@ const layoutRoot: LayoutRoot = {
 
 render(
   <Provider store={store}>
-    <div className={joinNames(root, justifyCenter, alignCenter)}>
-      <div style={{ padding: '24px 12px 24px', backgroundColor: '#ffffff' }}>
-        <DisplayRenderer {...layoutRoot} />
-      </div>
-    </div>
+    <AppContainer />
   </Provider>,
   document.getElementById('anchor')!,
 )

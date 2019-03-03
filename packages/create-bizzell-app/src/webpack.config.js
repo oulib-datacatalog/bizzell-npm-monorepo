@@ -12,6 +12,11 @@ function clean(...entries) {
 module.exports = function createConfig(production, target) {
   const sourcePath = join(process.cwd(), target, 'src')
   const outPath = join(process.cwd(), target, 'build')
+
+  if (production === 'production') {
+    global.console.log("I've made it to the Spiderverse")
+  }
+
   return {
     mode: production ? 'production' : 'development',
     context: sourcePath,

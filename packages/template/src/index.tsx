@@ -16,6 +16,7 @@ import 'froala-editor/css/froala_editor.pkgd.min.css'
 import 'font-awesome/css/font-awesome.css'
 
 import FroalaEditor from 'react-froala-wysiwyg'
+import { BizzellRouter } from './router'
 
 const { root, editorContainer } = styles
 
@@ -54,9 +55,14 @@ const layoutRoot: LayoutRoot = {
 }
 
 render(
-  <div className={joinNames(root, justifyCenter, alignCenter)}>
-    <div style={{ padding: '24px 24px 24px 24px', backgroundColor: '#ffffff' }}>
-      <DisplayRenderer {...layoutRoot} />
+  <div>
+    <BizzellRouter />
+    <div className={joinNames(root, justifyCenter, alignCenter)}>
+      <div
+        style={{ padding: '24px 24px 24px 24px', backgroundColor: '#ffffff' }}
+      >
+        <DisplayRenderer {...layoutRoot} />
+      </div>
     </div>
   </div>,
   document.getElementById('anchor')!,

@@ -16,12 +16,12 @@ import 'froala-editor/css/froala_editor.pkgd.min.css'
 import 'font-awesome/css/font-awesome.css'
 
 import FroalaEditor from 'react-froala-wysiwyg'
+import { BizzellRouter } from './router'
 
 const { root, editorContainer } = styles
 
-import { Provider } from 'react-redux'
-import { store } from './store'
-import { connect } from 'react-redux'
+import { Provider, connect } from 'react-redux'
+import { store, AppState } from './store'
 
 function ButtonDemo() {
   return (
@@ -49,17 +49,17 @@ function App() {
   return (
     <div className={joinNames(root, justifyCenter, alignCenter)}>
       <div style={{ padding: '24px 12px 24px', backgroundColor: '#ffffff' }}>
+        <BizzellRouter />
         <DisplayRenderer {...layoutRoot} />
       </div>
     </div>
   )
 }
 
-const mapStateToProps = function(state) {
-  return {
-    state,
-  }
+const mapStateToProps = function(state: AppState) {
+  return { ...state }
 }
+
 const AppContainer = connect(mapStateToProps)(App)
 
 const layoutRoot: LayoutRoot = {

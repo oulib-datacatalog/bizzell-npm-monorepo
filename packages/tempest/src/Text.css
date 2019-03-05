@@ -1,9 +1,8 @@
 .textStyle {
   border-radius: 4px;
   font-family: sans-serif;
-  color: #000000;
   transition: 0.2s;
-  margin: 8px 12px 8px 12px;
+  margin: 4px 12px 4px;
 }
 
 .textBody {

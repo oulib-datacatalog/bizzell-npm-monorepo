@@ -1,33 +1,50 @@
-import React, { ReactChild, Component, ReactNode } from 'react'
+import React, { Component } from 'react'
 import styles from './Card.css'
 import { joinNames, ClassNames } from './classNames'
-import { readOption } from './utils'
+import { Text } from './Text'
 
-const { cardStyle, cardContent, cardHeader, cardMedia, cardDisabled } = styles
-
-const types = ['content', 'header', 'media', 'disabled']
+const { card, cardContent, cardHeader, cardFlush } = styles
 
 type CardProps = {
-  className: ClassNames
-  children: {
-    header: ReactChild
-    media: ReactChild
-    content: ReactChild
-  }
+  className?: ClassNames
 }
 
 export class Card extends Component<CardProps> {
   render() {
-    // kept in this.props.children becuase this.props reconfiguration made page go dark
-    const { header, media, content } = this.props.children
+    const { className, children } = this.props
+    return <div className={joinNames(className, card)}>{children}</div>
+  }
+}
 
-      return (
-        <div className = {cardStyle}>
-          <div className={cardHeader}> {header} </div>
-          <div className={cardMedia}> {media} </div>
-          <div className={cardContent}> {content} </div>
-        </div>
-      )
-    }
-    
+interface CardContentProps {
+  className?: ClassNames
+  flush?: boolean
+}
+
+export class CardContent extends Component<CardContentProps> {
+  render() {
+    const { flush, className, children } = this.props
+    return (
+      <div className={joinNames(className, cardContent, flush && cardFlush)}>
+        {children}
+      </div>
+    )
+  }
+}
+
+interface CardHeaderProps {
+  text: string
+  children?: undefined
+  className?: ClassNames
+}
+
+export class CardHeader extends Component<CardHeaderProps> {
+  render() {
+    const { text, className } = this.props
+    return (
+      <div className={joinNames(className, cardHeader)}>
+        <Text title text={text} />
+      </div>
+    )
+  }
 }

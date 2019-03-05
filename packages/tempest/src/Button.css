@@ -3,14 +3,15 @@
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  padding: 8px 16px 8px;
+  padding: 4px 12px 4px;
+  margin: 0 12px 0;
   transition: 0.2s;
 }
 
 .button.buttonDisabled {
   background-color: #9999a3 !important;
   color: #222233;
-  padding: 8px 16px 8px;
+  padding: 4px 12px 4px;
   cursor: not-allowed;
 }
 
@@ -36,10 +37,12 @@
 }
 
 .buttonSecondary {
-  padding: 8px;
+  padding: 4px;
+  background-color: rgba(0, 0, 0, 0);
   color: #222299;
 }
 
 .buttonSecondary:hover {
+  background-color: rgba(0, 0, 0, 0.08);
   color: #5555aa;
 }

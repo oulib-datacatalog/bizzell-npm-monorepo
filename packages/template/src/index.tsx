@@ -1,82 +1,18 @@
-import { render } from 'react-dom'
 import React from 'react'
-import styles from './index.css'
-import {
-  Button,
-  joinNames,
-  justifyCenter,
-  alignCenter,
-  justifyEnd,
-} from '@bizzell/tempest'
-import { DisplayRenderer, LayoutRoot } from '@bizzell/wizard'
+import { render } from 'react-dom'
 
 import 'froala-editor/js/froala_editor.pkgd.min.js'
 import 'froala-editor/css/froala_style.min.css'
 import 'froala-editor/css/froala_editor.pkgd.min.css'
 import 'font-awesome/css/font-awesome.css'
 
-import FroalaEditor from 'react-froala-wysiwyg'
-import { BizzellRouter } from './router'
-
-const { root, editorContainer } = styles
-
-import { Provider, connect } from 'react-redux'
-import { store, AppState } from './store'
-
-function ButtonDemo() {
-  return (
-    <div>
-      <div className={editorContainer}>
-        <FroalaEditor tag="textarea" />
-      </div>
-      <div className={justifyEnd}>
-        <Button
-          text="Hello World!"
-          secondary
-          onClick={() =>
-            import('./dynamic').then(dynamic => {
-              dynamic.assertImported()
-            })
-          }
-        />
-        <Button text="Hello World!" primary />
-      </div>
-    </div>
-  )
-}
-
-function App() {
-  return (
-    <div className={joinNames(root, justifyCenter, alignCenter)}>
-      <div style={{ padding: '24px 12px 24px', backgroundColor: '#ffffff' }}>
-        <BizzellRouter />
-        <DisplayRenderer {...layoutRoot} />
-      </div>
-    </div>
-  )
-}
-
-const mapStateToProps = function(state: AppState) {
-  return { ...state }
-}
-
-const AppContainer = connect(mapStateToProps)(App)
-
-const layoutRoot: LayoutRoot = {
-  appName: 'demo',
-  layout: {
-    type: 'custom',
-    customComponent: 'buttonDemo',
-    props: {},
-  },
-  customComponents: {
-    buttonDemo: ButtonDemo,
-  },
-}
+import { Provider } from 'react-redux'
+import { configureStore } from './configureStore'
+import { App } from './App'
 
 render(
-  <Provider store={store}>
-    <AppContainer />
+  <Provider store={configureStore()}>
+    <App />
   </Provider>,
   document.getElementById('anchor')!,
 )

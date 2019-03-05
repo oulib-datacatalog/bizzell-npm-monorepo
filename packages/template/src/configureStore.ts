@@ -1,5 +1,3 @@
-/** basic counter as a placeholder */
-
 import { createStore } from 'redux'
 import { reducer } from './reducers'
 
@@ -13,4 +11,6 @@ const initialState: AppState = {
   isEditing: true,
 }
 
-export const store = createStore(reducer, initialState)
+export function configureStore() {
+  return createStore(reducer, initialState)
+}

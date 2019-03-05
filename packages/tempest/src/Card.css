@@ -1,36 +1,21 @@
-.cardStyle {
-  /* width: 100%; */
-  width: 150px;
-  height: 200px;
-  display: block;
+.card {
   position: relative;
   border-radius: 4px;
-  margin-right: 10px;
-  margin-top: 15px;
-  border: 1px solid;
+  padding-top: 24px;
+  margin-bottom: 24px;
   background-color: whitesmoke;
-  font-family: sans-serif;
+  box-shadow: 0 2px 2px 2px rgba(128, 128, 128, 0.09);
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.18);
 }
 
 .cardHeader {
-  font-size: 30px;
-  font-weight: 200;
-  margin-left: 7%;
+  padding: 0 12px 24px;
 }
 
 .cardContent {
-  font-size: 12px;
-  font-weight: 100;
+  padding: 0 12px 24px;
 }
 
-.cardMedia {
-  border-radius: 5px, 5px, 2px, 2px;
-  margin: 0, 0, 0, 0;
-}
-
-/* keeping in for if we want to later disable a card */
-.cardDisabled {
-  background-color: #9999a3 !important;
-  color: #222233;
-  cursor: not-allowed;
+.cardContent.cardFlush {
+  padding: 0 0 24px;
 }

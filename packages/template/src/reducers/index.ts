@@ -1,5 +1,5 @@
 import { AppAction } from '../actions'
-import { AppState } from '../store'
+import { AppState } from '../configureStore'
 
 const initialState: AppState = {
   count: 0,

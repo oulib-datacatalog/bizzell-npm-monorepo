@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { C1 } from './components/c1'
 import { C2 } from './components/c2'
 import { C3 } from './components/c3'
+import './router.css'
 //import React from "react";
 import {
   BrowserRouter as Router,
@@ -14,7 +15,7 @@ const Home = () => <C1 />
 const One = () => <C2 />
 const Topics = ({ match }: RouteComponentProps) => (
   <div>
-    <h2 style={{ textAlign: 'center' }}>Topics</h2>
+    <h1 style={{ textAlign: 'center' }}>Topics</h1>
     <ul>
       <li>
         <Link to={`${match.url}/rendering`}>Rendering with React</Link>
@@ -35,6 +36,9 @@ const Topics = ({ match }: RouteComponentProps) => (
     />
   </div>
 )
+const Rendering = () => <h1>Rendering with React</h1>
+const Components = () => <h1>Components</h1>
+const PropsVsState = () => <h1>Props vs. State</h1>
 
 const Topic = ({ match }: RouteComponentProps<{ topicId: string }>) => (
   <div>
@@ -63,6 +67,9 @@ const AppRouter = () => (
       <Route path="/" exact component={Home} />
       <Route path="/one/" component={One} />
       <Route path="/topics" component={Topics} />
+      <Route path="/topics/rendering" component={Rendering} />
+      <Route path="/topics/components" component={Components} />
+      <Route path="/topics/props-v-state" component={PropsVsState} />
     </div>
   </Router>
 )

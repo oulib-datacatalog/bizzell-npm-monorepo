@@ -70,7 +70,6 @@
   },
   "dependencies": {
     "@bizzell/tempest": "^1.0.0",
-    "@bizzell/wizard": "1.0.0",
     "classnames": "2.2.6",
     "font-awesome": "^4.7.0",
     "froala-editor": "2.9.3",

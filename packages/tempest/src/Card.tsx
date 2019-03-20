@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Component } from 'react'
 import styles from './Card.css'
 import { joinNames, ClassNames } from './classNames'
 import { Text } from './Text'

@@ -1,8 +1,76 @@
-# Placeholder
+# Bizzell App
+
+This readme outlines all the configuration you'll need to get up and running with an application generated using `@bizzell/create-bizzell-app`. First, you'll need to make sure `node.js` is installed on your machine along with a recent version of `npm`. We recommend using Visual Studio Code (not to bee confused with Visual Studio) and Git to get the best tooling and support.
+
+## To Install Node:
+
+Go to https://nodejs.org/en/download and download applicable version for your machine and project
+
+## To Install VS Code:
+
+Go to https://code.visualstudio.com/download and download applicable version for your machine
+
+## Configuring Settings in VS Code:
+
+There are two types of settings VS Code provides - User (these apply globally to any instance of VS Code you open) and Workspace (these settings are stored inside your workspace in a .vscode folder and will only be applied when the workspace is opened)
+
+To configure the desired settings go to File > Preferences > Settings (Code > Preferences > Settings on a Mac) for both user and workspace settings. Your changes will go into effect after the settings.json file has been saved.
+
+In Windows the Settings File is located at %APPDATA%\Code\User\settings.json
+
+On a Mac the Settings File is located at $HOME/Library/Application Support/Code/User/settings.json
+
+In Linux the Settings File is at $HOME/.config/Code/User/settings.json
+
+For the workspace settings file, go to the .vscode folder within your project
+
+## To Get Extensions in VS Code:
+
+- Step 1. Bring up the Extensions view by clicking the Extensions icon (a square icon usually at the bottom of the icon list) in the Activity Bar on the side of the VS Code platform or use the command (Ctrl + Shift + X)
+
+- Step 2. Browse the various extensions until you find the one you want. In order to see a more in-depth explanation of any extension simply click on its name to open a side view which will give you the details, contributions, changelog, and dependencies of the chosen extension. When you've found what you want click the Install button next to the chosen extension.
+
+- Step 3. In order for your downloaded extensions to take effect in VS Code click the Reload button that appears after the extension is successfully downloaded. This will restart VS Code and allow your extension to be used.
+
+## To Manage Extensions in VS Code:
+
+#### To List Installed Extensions:
+
+Open the More Actions (…) drop-down menu and select 'Show Installed Extensions'. This will show you all installed extensions.
+
+#### To Uninstall an Extension:
+
+Click the gear button on the right of an extension entry and choose Uninstall from the drop-down menu. Then reload VS Code when prompted to uninstall the extension on your machine.
+
+#### To Disable an Extension:
+
+Click the gear button on the right of an extension entry and choose Disable or Disable (Workspace) {this will only disable the extension for your current workspace}. Then reload VS Code when prompted to disable the extension.
+
+#### To Enable an Extension:
+
+Click the gear button on the right of an extension entry and choose Enable or Enable (Workspace). Then reload VS Code when prompted to enable the extension.
+
+#### To Automatically Update Extensions:
+
+VS Code checks for updates on extensions and automatically installs them. You'll know an extension has been updated if you are prompted to reload VS Code.
+
+#### To Update Extensions Manually:
+
+If auto-update of extensions is disabled (accomplished by setting extensions.autoUpdate to false). Open the More Actions (…) drop-down menu and select 'Show Outdated Extensions' then click the Update button on the extensions you'd like to update. You will then be prompted to reload VS Code so the update can go into effect.
+
+<!-- ## To Get Existing NPM Scripts to Interact With Current Libraries:
+
+To run any script (created in the package.json of your project and will look like:
+
+"scripts:" {
+"script_name" : "file_you_want_script_to_run",
+"script_name" : "file_you_want_script_to_run",
+"script_name" : "file_you_want_script_to_run"
+}
+
+) simply run 'npm run script_name' in the terminal. -->
 
 ## Workflow
-
-The only system dependency of this project is nodejs. This project is OS and IDE agnostic, though I recommend a modern text editor. @DuncanWalter uses and recommends `VSCode` (not to be confused with `Visual Studio`).
 
 Assert that you have `node` installed. Open the project directory in a terminal or command prompt. The first time you open the project and anytime the project's dependencies change, you'll need to run:
 

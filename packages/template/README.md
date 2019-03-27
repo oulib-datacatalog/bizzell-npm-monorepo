@@ -28,17 +28,17 @@ For the workspace settings file, go to the .vscode folder within your project
 
 ## To Manage Extensions in VS Code:
 
-<dt>To List Installed Extensions</dt>: Open the More Actions (…) drop-down menu and select 'Show Installed Extensions'. This will show you all installed extensions.
+<dt>To List Installed Extensions:</dt> Open the More Actions (…) drop-down menu and select 'Show Installed Extensions'. This will show you all installed extensions.
 
-<dt>To Uninstall an Extension</dt>: Click the gear button on the right of an extension entry and choose Uninstall from the drop-down menu. Then reload VS Code when prompted to uninstall the extension on your machine.
+<dt>To Uninstall an Extension:</dt> Click the gear button on the right of an extension entry and choose Uninstall from the drop-down menu. Then reload VS Code when prompted to uninstall the extension on your machine.
 
-<dt>To Disable an Extension</dt>: Click the gear button on the right of an extension entry and choose Disable or Disable (Workspace) {this will only disable the extension for your current workspace}. Then reload VS Code when prompted to disable the extension.
+<dt>To Disable an Extension:</dt> Click the gear button on the right of an extension entry and choose Disable or Disable (Workspace) {this will only disable the extension for your current workspace}. Then reload VS Code when prompted to disable the extension.
 
-<dt>To Enable an Extension</dt>: Click the gear button on the right of an extension entry and choose Enable or Enable (Workspace). Then reload VS Code when prompted to enable the extension.
+<dt>To Enable an Extension:</dt> Click the gear button on the right of an extension entry and choose Enable or Enable (Workspace). Then reload VS Code when prompted to enable the extension.
 
-<dt>To Automatically Update Extensions</dt>: VS Code checks for updates on extensions and automatically installs them. You'll know an extension has been updated if you are prompted to reload VS Code.
+<dt>To Automatically Update Extensions:</dt> VS Code checks for updates on extensions and automatically installs them. You'll know an extension has been updated if you are prompted to reload VS Code.
 
-<dt>To Update Extensions Manually</dt>: If auto-update of extensions is disabled (accomplished by setting extensions.autoUpdate to false). Open the More Actions (…) drop-down menu and select 'Show Outdated Extensions' then click the Update button on the extensions you'd like to update. You will then be prompted to reload VS Code so the update can go into effect.
+<dt>To Update Extensions Manually:</dt> If auto-update of extensions is disabled (accomplished by setting extensions.autoUpdate to false). Open the More Actions (…) drop-down menu and select 'Show Outdated Extensions' then click the Update button on the extensions you'd like to update. You will then be prompted to reload VS Code so the update can go into effect.
 
 ## To Download Node:
 

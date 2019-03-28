@@ -1,11 +1,16 @@
 // Dummy react component for testing with router
 import React, { Component, Fragment } from 'react'
-import { Button, justifyEnd, Card } from '@bizzell/tempest'
+import {
+  Button,
+  justifyEnd,
+  Card,
+  CardHeader,
+  CardContent,
+} from '@bizzell/tempest'
 import FroalaEditor from 'react-froala-wysiwyg'
 
 import styles from '../index.css'
 import { Navigation } from './Navigation'
-import { CardContent, CardHeader } from '@bizzell/tempest/src/Card'
 const { editorContainer } = styles
 
 export class Dashboard extends Component {

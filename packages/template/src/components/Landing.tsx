@@ -1,7 +1,13 @@
 import React, { Component, Fragment } from 'react'
 import { Navigation } from './Navigation'
-import { joinNames, column, alignCenter, Text } from '@bizzell/tempest'
-import { CardContent, Card } from '@bizzell/tempest/src/Card'
+import {
+  joinNames,
+  column,
+  alignCenter,
+  Text,
+  Card,
+  CardContent,
+} from '@bizzell/tempest'
 
 export class Landing extends Component {
   render() {

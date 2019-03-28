@@ -1,8 +1,7 @@
 import React from 'react'
 import { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Card } from '@bizzell/tempest'
-import { CardContent } from '@bizzell/tempest/src/Card'
+import { Button, Card, CardContent } from '@bizzell/tempest'
 
 export class Navigation extends Component {
   render() {

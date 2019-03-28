@@ -1,6 +1,6 @@
 {
   "name": "@bizzell/tempest",
-  "version": "1.0.0",
+  "version": "1.2.2",
   "description": "Bizzell standard component library.",
   "sideEffects": false,
   "main": "lib/index.js",

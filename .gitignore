@@ -1,4 +1,4 @@
-**/.*
-**/*.tgz
-!**/.gitignore
-**/node_modules
+.*
+*.tgz
+!.gitignore
+node_modules

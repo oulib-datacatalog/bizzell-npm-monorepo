@@ -4,6 +4,7 @@ const { join } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
+const AnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 function clean(...entries) {
   return entries.filter(entry => !!entry && entry !== true)
@@ -12,6 +13,9 @@ function clean(...entries) {
 module.exports = function createConfig(production, target) {
   const sourcePath = join(process.cwd(), target, 'src')
   const outPath = join(process.cwd(), target, 'build')
+
+  console.log(join(process.cwd(), target, 'node_modules'))
+
   return {
     mode: production ? 'production' : 'development',
     context: sourcePath,
@@ -26,8 +30,9 @@ module.exports = function createConfig(production, target) {
     },
     target: 'web',
     resolve: {
-      extensions: ['.js', '.ts', '.tsx'],
+      extensions: ['.js', '.mjs', '.ts', '.tsx'],
       mainFields: ['module', 'browser', 'main'],
+      modules: [join(process.cwd(), target, 'node_modules'), './node_modules'],
     },
     module: {
       rules: [
@@ -38,8 +43,8 @@ module.exports = function createConfig(production, target) {
               loader: require.resolve('babel-loader'),
               options: {
                 presets: clean(
-                  production || require('@babel/preset-react'),
-                  production || require('@babel/preset-typescript'),
+                  /*production ||*/ require('@babel/preset-react'),
+                  /*production ||*/ require('@babel/preset-typescript'),
                   clean(require('@babel/preset-env'), {
                     modules: false,
                     targets: 'last 1 version, not dead, > 1% in US',
@@ -51,7 +56,7 @@ module.exports = function createConfig(production, target) {
                 ),
               },
             },
-            production && require.resolve('ts-loader'),
+            // production && require.resolve('ts-loader'),
           ),
         },
         {
@@ -88,10 +93,8 @@ module.exports = function createConfig(production, target) {
         },
         {
           test: /\.(svg|woff|woff2|ttf|eot)$/,
-          use: [
-            require.resolve('file-loader')
-          ]
-        }
+          use: [require.resolve('file-loader')],
+        },
       ],
     },
     plugins: clean(
@@ -109,12 +112,13 @@ module.exports = function createConfig(production, target) {
         new CompressionPlugin({
           test: production ? /\.(js|css)$/ : '__disabled__',
         }),
+      production && new AnalyzerPlugin(),
       new HtmlWebpackPlugin({
         template: join(sourcePath, 'index.html'),
       }),
       new webpack.ProvidePlugin({
-        $: "jquery",
-        jQuery: "jquery"
+        $: 'jquery',
+        jQuery: 'jquery',
       }),
     ),
     devServer: {

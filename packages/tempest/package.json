@@ -67,12 +67,18 @@
     "@types/jest": "23.3.1",
     "@types/react": "16.4.18",
     "@types/react-dom": "16.0.9",
+"classnames": "^2.2.6",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
+    "font-awesome": "^4.7.0",
+    "froala-editor": "2.9.3",
     "jest": "23.5.0",
     "lint-staged": "8.1.0",
     "prettier": "1.14.2",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
     "react-testing-library": "^6.0.4",
+    "react-froala-wysiwyg": "^2.9.1-1",
     "rollup": "0.66.6",
     "rollup-plugin-babel": "4.0.3",
     "rollup-plugin-postcss": "1.6.2",
@@ -84,9 +90,12 @@
     "tslint-react": "3.6.0",
     "typescript": "3.0.3"
   },
-  "dependencies": {
+  "peerDependencies": {
     "classnames": "^2.2.6",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "font-awesome": "^4.7.0",
+    "froala-editor": "2.9.3",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "react-froala-wysiwyg": "^2.9.1-1"
   }
 }

@@ -33,17 +33,15 @@ npm run dev
 
 ### packages
 
-#### `create-bizzel-app`
+#### `create-bizzell-app`
 
 CLI tool for creating new applications which properly import, load, and build `@bizzell/tempest` and `@bizzell/wizard`. Generated apps do not contain their own build logic and are wysiwyg editable.
+
+#### `template`
 
 #### `tempest`
 
 React component library with basic building blocks for large, complicated apps.
-
-#### `wizard`
-
-React library for wysiwyg applications with support for routes, custom components, and extracting production layout from wysiwyg code. Depends on `@bizzell/tempest`.
 
 ### configs
 

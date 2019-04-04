@@ -1,5 +1,7 @@
 ## Development
 
+This is a branch off of master. There are a number of other branches in progress, but the master branch reflects all of the points addressed below.
+
 ### Needs development
 
 We need to

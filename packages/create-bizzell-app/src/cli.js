@@ -4,6 +4,7 @@ const { copySync } = require('fs-extra')
 const { join } = require('path')
 const webpack = require('webpack')
 const Server = require('webpack-dev-server')
+const fs = require('fs')
 
 const args = process.argv.slice(2)
 

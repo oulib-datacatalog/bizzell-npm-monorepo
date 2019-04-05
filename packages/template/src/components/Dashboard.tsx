@@ -1,19 +1,19 @@
-// Dummy react component for testing with router
 import React, { Component, Fragment } from 'react'
-import {
-  Button,
-  justifyEnd,
-  Card,
-  CardHeader,
-  CardContent,
-} from '@bizzell/tempest'
-import FroalaEditor from 'react-froala-wysiwyg'
+import { Button, justifyEnd, Card, Editor } from '@bizzell/tempest'
 
 import styles from '../index.css'
 import { Navigation } from './Navigation'
+import { CardContent, CardHeader } from '@bizzell/tempest/src/Card'
+import { AppState } from '../configureStore'
+import { connect } from 'react-redux'
+import { Dispatch } from 'redux'
 const { editorContainer } = styles
 
-export class Dashboard extends Component {
+interface DashboardProps extends AppState {
+  dispatch: Dispatch
+}
+
+class Dashboard extends Component<DashboardProps> {
   render() {
     return (
       <Fragment>
@@ -26,7 +26,11 @@ export class Dashboard extends Component {
                 padding: '0 12px 0',
               }}
             >
-              <FroalaEditor tag="textarea" />
+              <Editor
+                id="1"
+                toggle={this.props.isEditing}
+                content="add html here"
+              />
             </div>
           </CardContent>
           <CardContent className={justifyEnd}>
@@ -46,3 +50,14 @@ export class Dashboard extends Component {
     )
   }
 }
+
+function mapStateToProps(state: AppState) {
+  return { ...state }
+}
+
+const DashboardContainer = connect(
+  mapStateToProps,
+  dispatch => ({ dispatch }),
+)(Dashboard)
+
+export { DashboardContainer as Dashboard }

@@ -4,6 +4,7 @@ import { AppState } from '../configureStore'
 const initialState: AppState = {
   count: 0,
   isEditing: true,
+  // varName: value,
 }
 
 export function reducer(
@@ -11,8 +12,10 @@ export function reducer(
   action: AppAction,
 ): AppState {
   switch (action.type) {
+    // case example
     case 'INCREMENT':
       return {
+        // returns the current state but with the count variable modified
         ...state,
         count: state.count + 1,
       }

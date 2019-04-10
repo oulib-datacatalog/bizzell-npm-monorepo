@@ -117,3 +117,77 @@ All git commits are guarded by a `husky` precommit check which runs tests and ma
 - `Rollup`: javascript bundler which, as of Feb. 2018, `Rollup` supports the code splitting and dynamic imports we need to do our jobs correctly.
 - `Jest`: Test runner that just works. UI can be difficult to test, but `Jest` will be invaluable if we add `redux` or other abstractions.
 - `Typescript`: language pragma which adds type declarations to javascript. It has a structural, algebraic type system.
+
+## Managing State with Redux
+
+### To Add Variables to State
+
+Go to `src/configureStore.ts`. In the AppState interface, add variables with the format `varName: varType`.
+
+Then go to `src/reducers/index.ts`. In initialState, add starting variables with the format `varName: value,`.
+
+### To Add Actions to Modify State
+
+Go to `src/actions/index.ts`. Add functions using the format provided. All actions will need a type. If you want the action to accept additional arguments or store additional variables you can modify the AppAction interface.
+
+Then go to `src/reducers/index.ts`. Add a case to the switch statement for the type of action you added. The state returned will be the new state after the action.
+
+### To Connect a Component to State
+
+Add the following import statements:
+
+```javascript
+import { AppState } from '<path to src>/configureStore'
+import { connect } from 'react-redux'
+```
+
+Add the function `mapStateToProps`. This can return the whole state or just certain variables. Then connect and export the component.
+
+```javascript
+function mapStateToProps(state: AppState) {
+    return { ...state }
+}
+
+const ConnectedComponent = connect(
+    mapStateToProps,
+    dispatch => ({dispatch}),
+)(ComponentName)
+
+export ConnectedComponent
+```
+
+### To Use Actions to Modify State
+
+Make sure the component is connected to the state.
+
+Add the following import statements.
+
+```javascript
+import { Dispatch } from 'redux'
+import { <desiredActions> } from '<path to src>/actions'
+```
+
+Add an interface for props and allow props to be passed to the component.
+
+```javascript
+interface ComponentProps extends AppState {
+  dispatch: Dispatch;
+}
+
+class ComponentName extends Component<ComponentProps> {}
+```
+
+To actually use an action you will need the following code.
+
+```javascript
+const { dispatch } = this.props
+dispatch(actionName())
+```
+
+### To Access Variables in State
+
+Make sure the component is connected to the state and that the variables you want to access are included in `mapStateToProps`. Then you can access the variable using `this.props.variableName`.
+
+### To Learn More
+
+Redux documentation: https://react-redux.js.org/

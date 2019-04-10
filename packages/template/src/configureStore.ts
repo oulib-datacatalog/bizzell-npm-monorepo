@@ -4,13 +4,9 @@ import { reducer } from './reducers'
 export interface AppState {
   count: number
   isEditing: boolean
-}
-
-const initialState: AppState = {
-  count: 0,
-  isEditing: true,
+  // varName: varType
 }
 
 export function configureStore() {
-  return createStore(reducer, initialState)
+  return createStore(reducer)
 }

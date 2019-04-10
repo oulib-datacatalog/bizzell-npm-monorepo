@@ -1,0 +1,28 @@
+.ulStyle {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.liStyle {
+  float: left;
+  margin: 10px 0px 10px 0px;
+}
+
+.h1Style {
+  color: white;
+}
+
+.liStyle .aStyle {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.liStyle .aStyle:hover {
+  background-color: #111;
+}

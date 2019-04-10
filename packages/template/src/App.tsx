@@ -13,7 +13,9 @@ import { connect } from 'react-redux'
 import styles from './index.css'
 import { Dispatch } from 'redux'
 import { toggleEditing } from './actions'
+import appStyles from './App.css'
 const { root } = styles
+const { ulStyle, liStyle } = appStyles
 
 interface AppProps extends AppState {
   dispatch: Dispatch
@@ -29,28 +31,29 @@ class App extends React.Component<AppProps> {
     const { isEditing } = this.props
 
     return (
-      <div
-        className={justifyEnd}
-        style={{
-          color: '#ffffff',
-          position: 'fixed',
-          right: '0',
-          top: '0',
-          margin: '24px 12px 0',
-        }}
-      >
-        <Button
-          primary
-          disabled={isEditing}
-          text="Display"
-          onClick={() => this.handleToggleEditing()}
-        />
-        <Button
-          primary
-          disabled={!isEditing}
-          text="Edit"
-          onClick={() => this.handleToggleEditing()}
-        />
+      <div>
+        <nav>
+          <ul className={joinNames(ulStyle, justifyEnd)}>
+            <li className={liStyle}>
+              {' '}
+              <Button
+                primary
+                disabled={!isEditing}
+                text="Display"
+                onClick={() => this.handleToggleEditing()}
+              />{' '}
+            </li>
+            <li className={liStyle}>
+              {' '}
+              <Button
+                primary
+                disabled={isEditing}
+                text="Edit"
+                onClick={() => this.handleToggleEditing()}
+              />
+            </li>
+          </ul>
+        </nav>
       </div>
     )
   }

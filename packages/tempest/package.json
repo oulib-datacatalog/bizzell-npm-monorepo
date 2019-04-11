@@ -1,6 +1,6 @@
 {
   "name": "@bizzell/tempest",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Bizzell standard component library.",
   "sideEffects": false,
   "main": "lib/index.js",
@@ -67,7 +67,7 @@
     "@types/jest": "23.3.1",
     "@types/react": "16.4.18",
     "@types/react-dom": "16.0.9",
-"classnames": "^2.2.6",
+    "classnames": "^2.2.6",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
     "font-awesome": "^4.7.0",

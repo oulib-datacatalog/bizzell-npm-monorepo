@@ -1,7 +1,7 @@
 {
   "name": "@bizzell/create-bizzell-app",
   "description": "The only system dependency of this project is nodejs. This project is OS and IDE agnostic, though I recommend a modern text editor. @DuncanWalter uses and recommends `VSCode` (not to be confused with `Visual Studio`).",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "main": "src/main.js",
   "files": [
     "src/**/*",
@@ -49,7 +49,8 @@
     "url-loader": "^1.1.2",
     "webpack": "4.23.1",
     "webpack-bundle-analyzer": "^3.1.0",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.1.14",
+    "yargs": "^13.2.2"
   },
   "devDependencies": {
     "@types/fs-extra": "^5.0.4",

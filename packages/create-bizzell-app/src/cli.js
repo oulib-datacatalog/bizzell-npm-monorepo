@@ -1,4 +1,19 @@
 #!/usr/bin/env node
+const args = require('yargs')
+  .option('build', {
+    default: false,
+    describe: 'Compile a production build. Emits static assets.',
+  })
+  .option('dev', {
+    default: false,
+    describe:
+      'Run a project dev server on localhost:3000. Good for developing new components.',
+  })
+  .option('edit', {
+    default: false,
+    describe:
+      'Run a dev server with a persistance server for changes to html content within editor components.',
+  }).argv
 
 const { copySync } = require('fs-extra')
 const { join } = require('path')
@@ -6,11 +21,11 @@ const webpack = require('webpack')
 const Server = require('webpack-dev-server')
 const fs = require('fs')
 
-const args = process.argv.slice(2)
+// const args = process.argv.slice(2)
 
 const mode =
   ['edit', 'build', 'dev']
-    .filter(mode => args.includes(mode))
+    .filter(mode => args[mode])
     .find((val, _, { length }) => {
       if (length > 1) {
         throw new Error(
@@ -22,17 +37,7 @@ const mode =
       }
     }) || 'create'
 
-const pathPattern = /--path=([\-\.\/a-zA-Z0-9]*)/
-const path =
-  args
-    .filter(arg => pathPattern.exec(arg))
-    .map(arg => pathPattern.exec(arg)[1])
-    .find(path => true) ||
-  (() => {
-    throw new Error(
-      'No path specified for create-bizzell-app (--path=./path/to/target)',
-    )
-  })()
+const path = args._[0] || './'
 
 switch (mode) {
   case 'create': {

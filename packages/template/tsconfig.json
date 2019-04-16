@@ -6,7 +6,8 @@
     "lib": ["es6", "dom"],
     "target": "esnext",
     "moduleResolution": "node",
-    "module": "esnext"
+    "module": "esnext",
+    "esModuleInterop": true
   },
   "exclude": ["build", "node_modules"]
 }

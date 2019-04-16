@@ -9,6 +9,9 @@ Enzyme.configure({ adapter: new Adapter() })
 
 afterEach(cleanup)
 
+//This is a test class for the Checkbox component.
+//Test ensures that the Checkbox component renders.
+
 describe('Button component test', () => {
   it('Should Render Button', () => {
     jest.spyOn(Checkbox.prototype, 'render')

@@ -8,6 +8,9 @@ Enzyme.configure({ adapter: new Adapter() })
 
 afterEach(cleanup)
 
+//This is a test class for the Text component.
+//Test ensures that the Text component renders.
+
 describe('Text component test', () => {
   it('Should Render Text', () => {
     jest.spyOn(Text.prototype, 'render')

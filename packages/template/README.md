@@ -274,6 +274,36 @@ Redux documentation: https://react-redux.js.org/
 
 ## Testing
 
-[Back to contents](#contents)
+### To run a test
 
-<!-- TODO add testing info -->
+Execute the command npm run test in terminal.
+
+### To create a test
+
+Ensure that test file names follow the format of 'filename'.test.ts/tsx.
+
+Add the following import statements:
+
+```javascript
+import { cleanup } from 'react-testing-library'
+import React from 'react'
+import Enzyme from 'enzyme'
+import { mount } from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
+import ComponentYouWouldLikeToTest from './ComponentYouWouldLikeToTest'
+```
+
+Configure and set up react-testing-library's cleanup function:
+
+```javascript
+Enzyme.configure({ adapter: new Adapter() })
+
+afterEach(cleanup)
+```
+
+Then component test/s can be implemented. Documentation regarding the specifics of React testing can be found at the following:
+
+https://jestjs.io/docs/en/tutorial-react
+https://github.com/kentcdodds/react-testing-library
+
+[Back to contents](#contents)

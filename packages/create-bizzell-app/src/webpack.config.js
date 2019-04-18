@@ -92,11 +92,11 @@ module.exports = function createConfig(production, target) {
           ],
         },
         {
-          test: /\.(svg|woff|woff2|ttf|eot)$/,
+          test: /\.(jpg|png|gif|svg|woff|woff2|ttf|eot)$/,
           use: [
-            require.resolve('file-loader')
+            require.resolve('file-loader'),
           ]
-        }
+        },
       ],
     },
     plugins: clean(

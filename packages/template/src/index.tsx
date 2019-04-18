@@ -2,6 +2,7 @@ import { render } from 'react-dom'
 import ReactDOM from 'react-dom'
 import React from 'react'
 import styles from './index.css'
+
 import {
   Button,
   joinNames,
@@ -45,6 +46,13 @@ function ButtonDemo() {
         />
         <Button text="Hello World!" primary />
       </div>
+      <img alt="plus" src={require('./img/plus.png')} />
+      <img
+        alt="vibe"
+        style={{ width: 50 }}
+        src={require('./img/vibraphone.jpg')}
+      />
+      <img alt="hello" src={require('./img/hello.gif')} />
     </div>
   )
 }

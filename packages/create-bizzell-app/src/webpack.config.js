@@ -92,7 +92,7 @@ module.exports = function createConfig(production, target) {
           ],
         },
         {
-          test: /\.(svg|woff|woff2|ttf|eot)$/,
+          test: /\.(mp3|mpg|mpeg|mov|txt|wav|zip|jpeg|jpg|png|gif|svg|woff|woff2|ttf|eot)$/,
           use: [require.resolve('file-loader')],
         },
       ],

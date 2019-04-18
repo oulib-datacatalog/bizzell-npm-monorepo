@@ -7,9 +7,9 @@
     "precommit": "npm run lint && npm run test",
     "lint": "lint-staged",
     "test": "jest",
-    "dev": "create-bizzell-app --path=. dev",
-    "build": "create-bizzell-app --path=. build",
-    "edit": "create-bizzell-app --path=. edit"
+    "dev": "create-bizzell-app --dev",
+    "build": "create-bizzell-app --build",
+    "edit": "create-bizzell-app --edit"
   },
   "repository": {
     "type": "git",

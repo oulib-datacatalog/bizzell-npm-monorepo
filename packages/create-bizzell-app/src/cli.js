@@ -1,43 +1,63 @@
 #!/usr/bin/env node
-const args = require('yargs')
-  .option('build', {
-    default: false,
-    describe: 'Compile a production build. Emits static assets.',
-  })
-  .option('dev', {
-    default: false,
-    describe:
-      'Run a project dev server on localhost:3000. Good for developing new components.',
-  })
-  .option('edit', {
-    default: false,
-    describe:
-      'Run a dev server with a persistance server for changes to html content within editor components.',
-  }).argv
 
+//Import these files for creating the project
 const { copySync } = require('fs-extra')
 const { join } = require('path')
 const webpack = require('webpack')
 const Server = require('webpack-dev-server')
 const fs = require('fs')
 
-// const args = process.argv.slice(2)
+//Gets the arguments and checks to see which one to use
+const argv = require('yargs')
+  //Edit the project
+  .alias('edit', 'e')
+  .nargs('e', 0)
+  .describe('e', 'Edit the projects editor panel content')
 
-const mode =
-  ['edit', 'build', 'dev']
-    .filter(mode => args[mode])
-    .find((val, _, { length }) => {
-      if (length > 1) {
-        throw new Error(
-          'create-bizzell-app can only be used in one mode at a time',
-        )
-        return false
-      } else {
-        return true
-      }
-    }) || 'create'
+  //Build the project
+  .alias('buid', 'b')
+  .nargs('b', 0)
+  .describe('b', 'Build project static assets in production mode')
 
-const path = args._[0] || './'
+  //Develop the project
+  .alias('dev', 'd')
+  .nargs('d', 0)
+  .describe('d', 'Run a development server in dev mode')
+
+  //Path chosen
+  .alias('path', 'p')
+  .nargs('p', 1)
+  .describe('p', 'Path to run create-bizzell-app from').argv
+
+//Variables to send
+let mode = ''
+let path = ''
+
+//Check which one is selected.
+switch (true) {
+  case argv.e: {
+    mode = 'edit'
+    break
+  }
+  case argv.b: {
+    mode = 'build'
+    break
+  }
+  case argv.d: {
+    mode = 'dev'
+    break
+  }
+  default: {
+    mode = 'create'
+  }
+}
+
+//If the path is not specified, then it will be set the the folders root folder
+if (argv.p == null) {
+  path = '.'
+} else {
+  path = argv.p
+}
 
 switch (mode) {
   case 'create': {

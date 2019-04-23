@@ -1,7 +1,7 @@
 {
   "name": "@bizzell/create-bizzell-app",
   "description": "The only system dependency of this project is nodejs. This project is OS and IDE agnostic, though I recommend a modern text editor. @DuncanWalter uses and recommends `VSCode` (not to be confused with `Visual Studio`).",
-  "version": "1.2.3",
+  "version": "1.3.0",
   "main": "src/main.js",
   "files": [
     "src/**/*",

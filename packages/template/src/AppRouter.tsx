@@ -6,7 +6,7 @@ import { About } from './components/About'
 
 import { Route, Switch } from 'react-router-dom'
 
-import { BrowserRouter as Router } from 'react-router-dom'
+import { HashRouter as Router } from 'react-router-dom'
 
 export class AppRouter extends Component {
   render() {
@@ -16,6 +16,7 @@ export class AppRouter extends Component {
           <Route exact path="/" component={Landing} />
           <Route path="/about" component={About} />
           <Route path="/dashboard" component={Dashboard} />
+          {/* <Route component={PageNotFound}/> */}
         </Switch>
       </Router>
     )

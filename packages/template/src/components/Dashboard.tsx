@@ -1,7 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Card } from '@bizzell/tempest'
-
-import { CardContent, CardHeader } from '@bizzell/tempest/src/Card'
+import { Card, CardContent, CardHeader } from '@bizzell/tempest'
 
 import { Editor } from '../Editor'
 import styles from '../index.css'

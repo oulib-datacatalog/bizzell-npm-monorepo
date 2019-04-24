@@ -29,11 +29,5 @@
   "bugs": {
     "url": "https://github.com/OU-CS4263-fall2018/capstone-27th-sporadic/issues"
   },
-  "homepage": "https://github.com/OU-CS4263-fall2018/capstone-27th-sporadic#readme",
-  "dependencies": {
-    "@types/enzyme": "^3.9.0",
-    "babel-preset-es2015": "^6.24.1",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3"
-  }
+  "homepage": "https://github.com/OU-CS4263-fall2018/capstone-27th-sporadic#readme"
 }

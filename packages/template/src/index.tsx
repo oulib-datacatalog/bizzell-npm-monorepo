@@ -1,6 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
 
+import 'promise-polyfill/src/polyfill'
+
 if (process.env.NODE_ENV === 'development') {
   require('froala-editor/js/froala_editor.pkgd.min.js')
   require('froala-editor/css/froala_editor.pkgd.min.css')

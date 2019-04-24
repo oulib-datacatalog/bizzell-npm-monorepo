@@ -1,6 +1,6 @@
 import React from "react";
-import App from './Mobile-navigation.js';
-import Nav from './Tablet-navigation.js';
+import App from './Mobile-navigation';
+import Nav from './Tablet-navigation';
 
 interface ResponsiveState {
   width: number;

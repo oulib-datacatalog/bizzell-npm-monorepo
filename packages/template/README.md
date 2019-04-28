@@ -272,6 +272,35 @@ Make sure the component is connected to the state and that the variables you wan
 
 Redux documentation: https://react-redux.js.org/
 
+## Images
+
+### To Store Needed Images
+
+In order to use the wanted images, you first need to create an img folder within src folder you wish to work in. For example if you'd like to add images to the index.html found within template, you must add the img folder within the same src folder within template. Place all of the desired images (png, jpg, gif, etc.) within the img folder so they will render correctly on your page.
+
+### To Call An Image
+
+Images can be called within the html. The 'alt' can possess any name you wish to give to the picture (alt is needed for `html <img/>` to work within the html, but has no baring outside of the picture's reference, so can be named any arbitrary value). 'src' is where you place the file path of the desired image, the 'require' portion forces React to render the picture itself instead of a placeholder. You can also stylize the photo within the image call, as seen below, or by calling the required css.
+
+Example of calling a .png:
+
+```html
+<img alt="plus" src={require('./img/name_of_picture.png')} />
+```
+
+Example of calling a .jpg with styling:
+
+```html
+<img alt="vibe" style={{ width: 50 }} src={require('./img/vibraphone.jpg')}
+/>
+```
+
+Example of calling a .gif:
+
+```html
+<img alt="hello" src={require('./img/hello.gif')} />
+```
+
 ## Testing
 
 ### To run a test

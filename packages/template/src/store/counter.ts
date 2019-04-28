@@ -27,9 +27,9 @@ export default function reducer(
 }
 
 export function increment() {
-  return { type: 'INCREMENT' }
+  return { type: 'counter/INCREMENT' }
 }
 
 export function decrement() {
-  return { type: 'DECREMENT' }
+  return { type: 'counter/DECREMENT' }
 }

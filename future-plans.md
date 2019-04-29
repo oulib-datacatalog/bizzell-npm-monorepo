@@ -66,9 +66,9 @@ As bonus points, all uses of JS classes should be replaced with React functional
 ----
 ### List of things to document here:
 
-404 Page
-Kill react-redux and all class keywords with a stable hooks api
-Add Some sort of state slice generator
-Component-by-Component docs for tempest w/ examples
-Npm + Lerna guides
+- 404 Page
+- Kill react-redux and all class keywords with a stable hooks api
+- Add Some sort of state slice generator
+- Component-by-Component docs for tempest w/ examples
+- Npm + Lerna guides
 

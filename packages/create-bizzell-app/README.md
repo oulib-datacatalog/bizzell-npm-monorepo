@@ -6,10 +6,10 @@ CLI tool for generating new Bizzell wysiwyg applications.
 # use npm to install the cli tool as a global package
 npm install -g @bizzell/create-bizzell-app
 
-# create a new application
-create-bizzell-app ./new-project/directory
-
 cd new-project/directory
+
+# create a new application in the cwd
+create-bizzell-app
 
 # install application dependencies
 npm install

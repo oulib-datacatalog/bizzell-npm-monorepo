@@ -17,6 +17,9 @@ export class Navigation extends Component {
           <Link to="/about">
             <Button text="About" />
           </Link>
+          <Link to="/config">
+            <Button text="Config" />
+          </Link>
         </CardContent>
       </Card>
     )

@@ -17,8 +17,11 @@ export class Navigation extends Component {
           <Link to="/about">
             <Button text="About" />
           </Link>
-          <Link to="/config">
-            <Button text="Config" />
+          <Link to="/search">
+            <Button text="Search" />
+          </Link>
+          <Link to="/tasks">
+            <Button text="Tasks" />
           </Link>
         </CardContent>
       </Card>

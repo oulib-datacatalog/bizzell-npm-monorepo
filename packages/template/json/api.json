@@ -1,0 +1,9 @@
+{
+  "Queue": {
+    "Tasks": "https://cc.lib.ou.edu/api/queue/",
+    "Tasks History": "https://cc.lib.ou.edu/api/queue/usertasks/"
+  },
+  "Data Store": { "Mongo": "https://cc.lib.ou.edu/api/data_store/data/" },
+  "Catalog": { "Data Source": "https://cc.lib.ou.edu/api/catalog/data/" },
+  "User Profile": { "User": "https://cc.lib.ou.edu/api/user/" }
+}

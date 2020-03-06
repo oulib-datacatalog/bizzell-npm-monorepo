@@ -1,0 +1,7 @@
+{
+  "queue": "celery",
+  "auth_token": "removed",
+  "task_docstring": "",
+  "task_name": "adminq.tasks.tasks.restartworker",
+  "task_url": "https://cc.lib.ou.edu/api/queue/run/adminq.tasks.tasks.restartworker/"
+}

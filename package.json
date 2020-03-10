@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/OU-CS4263-fall2018/capstone-27th-sporadic#readme",
   "dependencies": {
+    "@types/ramda": "^0.26.43",
     "@types/react": "^16.9.19"
   }
 }

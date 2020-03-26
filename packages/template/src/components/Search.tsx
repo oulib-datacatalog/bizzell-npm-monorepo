@@ -17,7 +17,7 @@ import {
 import * as R from 'ramda'
 
 //******Add filter******* path
-//Deploy sit
+//Deploy site
 type MyState = {
   src_lists: Array<string>
   src: string

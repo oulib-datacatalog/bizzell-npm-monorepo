@@ -1,8 +1,4 @@
 {
-  "count": 1782,
-  "meta": { "page": 1, "page_size": 10, "pages": 179 },
-  "next": "https://cc.lib.ou.edu/api/catalog/data/catalog/digital_objects/?page=2&format=json",
-  "previous": null,
   "results": [
     {
       "derivatives": {

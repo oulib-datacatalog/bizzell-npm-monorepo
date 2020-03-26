@@ -84,7 +84,7 @@ export class Search extends Component<{}, MyState> {
 
     let isArray = R.pathSatisfies(R.is(Array), ['results'], jsonData) //=> true
 
-    //Do nothing
+    //Do nothing if length is 0
     if (searchPath.length == 0) {
       return
     }

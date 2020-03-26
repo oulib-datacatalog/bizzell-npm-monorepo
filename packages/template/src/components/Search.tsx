@@ -75,9 +75,7 @@ export class Search extends Component<{}, MyState> {
         this.setState({ src: url, jsonData: data, isLoaded: true })
       })
   }
-  isArray(what: any) {
-    return Object.prototype.toString.call(what) === '[object Array]'
-  }
+
   searchClick(event: any) {
     let { jsonData, searchPath, searchDelim, searchValue } = this.state
     let delim = searchDelim

@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
 import { RouteComponentProps } from 'react-router-dom'
-import { Navigation } from './Navigation'
+import { Navigation } from './common/Navigation'
 import { CardHeader, CardContent, Card, Text } from '@bizzell/tempest'
 
 export class About extends Component<RouteComponentProps> {

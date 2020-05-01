@@ -3,7 +3,7 @@ import React from 'react'
 import { mount, configure } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { Navigation } from './Navigation'
+import { Navigation } from './common/Navigation'
 
 //This is a test class for the Navigation component.
 //Test ensures that the Navigation component renders.

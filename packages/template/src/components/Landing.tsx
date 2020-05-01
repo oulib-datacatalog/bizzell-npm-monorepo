@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Navigation } from './Navigation'
+import { Navigation } from './common/Navigation'
 import {
   joinNames,
   column,

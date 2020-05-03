@@ -53,6 +53,7 @@ const SearchPage = (props: any) => {
 
   const handleSearch = (event: any) => {
     event.preventDefault()
+
     setResult(getResults(searchParams, data.data))
   }
   return (

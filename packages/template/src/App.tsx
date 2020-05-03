@@ -41,7 +41,7 @@ class App extends React.Component<AppProps> {
       }),
     ).then(() => dispatch(resolveEdits()))
   }
-
+  handleDeploy() {}
   renderEditingToolbar() {
     const { isEditing } = this.props
 
@@ -70,6 +70,13 @@ class App extends React.Component<AppProps> {
                 primary
                 text="Save Changes"
                 onClick={() => this.handleSave()}
+              />
+            </li>
+            <li className={liStyle}>
+              <Button
+                primary
+                text="Deploy"
+                onClick={() => this.handleDeploy()}
               />
             </li>
           </ul>

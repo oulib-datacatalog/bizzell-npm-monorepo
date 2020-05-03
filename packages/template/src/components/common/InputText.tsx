@@ -9,6 +9,7 @@ const InputText = (props: any) => (
       onChange={props.onChange}
       name={props.name}
       value={props.value}
+      className=""
     />
   </>
 )

@@ -1,0 +1,10 @@
+{
+  "Available Collections": [
+    "https://cc.lib.ou.edu/api/catalog/data/catalog/bagit_inventory/",
+    "https://cc.lib.ou.edu/api/catalog/data/catalog/celery_worker_config/",
+    "https://cc.lib.ou.edu/api/catalog/data/catalog/digital_objects/",
+    "https://cc.lib.ou.edu/api/catalog/data/catalog/etd/",
+    "https://cc.lib.ou.edu/api/catalog/data/catalog/xml_templates/"
+  ],
+  "Database": "catalog"
+}

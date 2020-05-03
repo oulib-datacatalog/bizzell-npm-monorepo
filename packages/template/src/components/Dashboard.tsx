@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader } from '@bizzell/tempest'
 
 import { Editor } from '../Editor'
 import styles from '../index.css'
-import { Navigation } from './Navigation'
+import { Navigation } from './common/Navigation'
 
 const { editorContainer } = styles
 
